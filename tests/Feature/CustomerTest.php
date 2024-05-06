@@ -13,8 +13,8 @@ class CustomerTest extends TestCase
     /** @test */
     public function only_logged_in_users_can_see_customers_list(): void
     {
-        $response = $this->get('/dashboard');
+        $response = $this->get(route('dashboard'));
         
-        $response->assertRedirect('/login');
+        $response->assertRedirect(route('login'));
     }
 }
