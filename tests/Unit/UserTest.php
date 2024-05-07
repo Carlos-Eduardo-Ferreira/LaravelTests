@@ -3,11 +3,12 @@
 namespace Tests\Unit;
 
 use App\Models\User;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 class UserTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function check_if_user_columns_is_correct(): void
     {
         $user = new User();
