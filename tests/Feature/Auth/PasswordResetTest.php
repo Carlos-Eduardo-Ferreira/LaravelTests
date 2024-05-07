@@ -17,7 +17,7 @@ class PasswordResetTest extends TestCase
     #[Test]
     public function reset_password_link_screen_can_be_rendered(): void
     {
-        $response = $this->get('/forgot-password');
+        $response = $this->get(route('forgot_password.create'));
 
         $response->assertStatus(200);
     }
@@ -29,7 +29,7 @@ class PasswordResetTest extends TestCase
 
         $user = User::factory()->create();
 
-        $this->post('/forgot-password', [
+        $this->post(route('forgot_password.store'), [
             'email' => $user->email
         ]);
 
@@ -43,12 +43,12 @@ class PasswordResetTest extends TestCase
 
         $user = User::factory()->create();
 
-        $this->post('/forgot-password', [
+        $this->post(route('forgot_password.store'), [
             'email' => $user->email
         ]);
 
         Notification::assertSentTo($user, ResetPassword::class, function ($notification) {
-            $response = $this->get('/reset-password/'.$notification->token);
+            $response = $this->get(route('reset_password.create', ['token' => $notification->token]));
 
             $response->assertStatus(200);
 
@@ -63,12 +63,12 @@ class PasswordResetTest extends TestCase
 
         $user = User::factory()->create();
 
-        $this->post('/forgot-password', [
+        $this->post(route('forgot_password.store'), [
             'email' => $user->email
         ]);
 
         Notification::assertSentTo($user, ResetPassword::class, function ($notification) use ($user) {
-            $response = $this->post('/reset-password', [
+            $response = $this->post(route('reset_password.store'), [
                 'token' => $notification->token,
                 'email' => $user->email,
                 'password' => 'password',
@@ -76,7 +76,7 @@ class PasswordResetTest extends TestCase
             ]);
 
             $response->assertSessionHasNoErrors()->
-            assertRedirect(route('login'));
+            assertRedirect(route('login.create'));
 
             return true;
         });
