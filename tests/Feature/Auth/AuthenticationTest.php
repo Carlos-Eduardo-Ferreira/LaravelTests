@@ -13,20 +13,20 @@ class AuthenticationTest extends TestCase
 {
     use RefreshDatabase, WithFaker;
 
-    #[Test]    
+    #[Test]
     public function login_screen_can_be_rendered(): void
     {
-        $response = $this->get('/login');
+        $response = $this->get(route('login.create'));
 
         $response->assertStatus(200);
     }
 
-    #[Test]    
+    #[Test]
     public function users_can_authenticate_using_the_login_screen(): void
     {
         $user = User::factory()->create();
 
-        $response = $this->post('/login', [
+        $response = $this->post(route('login.store'), [
             'email' => $user->email,
             'password' => 'password',
         ]);
@@ -36,12 +36,12 @@ class AuthenticationTest extends TestCase
         $response->assertRedirect(RouteServiceProvider::HOME);
     }
 
-    #[Test]    
+    #[Test]
     public function users_can_not_authenticate_with_invalid_password(): void
     {
         $user = User::factory()->create();
 
-        $this->post('/login', [
+        $this->post(route('login.store'), [
             'email' => $user->email,
             'password' => 'wrong-password',
         ]);
@@ -49,16 +49,15 @@ class AuthenticationTest extends TestCase
         $this->assertGuest();
     }
 
-    #[Test]    
+    #[Test]
     public function users_can_logout(): void
     {
         $user = User::factory()->create();
 
-        $response = $this->actingAs($user)->
-        post('/logout');
+        $response = $this->actingAs($user)->post(route('logout.destroy'));
 
         $this->assertGuest();
 
-        $response->assertRedirect('/');
+        $response->assertRedirect(route('welcome'));
     }
 }

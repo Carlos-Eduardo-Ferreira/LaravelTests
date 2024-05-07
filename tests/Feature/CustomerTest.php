@@ -16,7 +16,7 @@ class CustomerTest extends TestCase
     {
         $response = $this->get(route('dashboard'));
         
-        $response->assertRedirect(route('login'));
+        $response->assertRedirect(route('login.create'));
     }
 }
 

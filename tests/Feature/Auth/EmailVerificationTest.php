@@ -24,7 +24,7 @@ class EmailVerificationTest extends TestCase
         ]);
 
         $response = $this->actingAs($user)->
-        get('/verify-email');
+        get(route('verify_email.notice'));
 
         $response->assertStatus(200);
     }
@@ -39,7 +39,7 @@ class EmailVerificationTest extends TestCase
         Event::fake();
 
         $verificationUrl = URL::temporarySignedRoute(
-            'verification.verify',
+            'verify_email.verify',
             now()->addMinutes(60),
             [
                 'id' => $user->id, 
@@ -68,7 +68,7 @@ class EmailVerificationTest extends TestCase
         ]);
 
         $verificationUrl = URL::temporarySignedRoute(
-            'verification.verify',
+            'verify_email.verify',
             now()->addMinutes(60),
             [
                 'id' => $user->id, 
