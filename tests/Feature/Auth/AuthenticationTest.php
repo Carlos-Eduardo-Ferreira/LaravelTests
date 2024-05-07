@@ -16,7 +16,7 @@ class AuthenticationTest extends TestCase
     #[Test]
     public function login_screen_can_be_rendered(): void
     {
-        $response = $this->get(route('login.create'));
+        $response = $this->get(route('login'));
 
         $response->assertStatus(200);
     }
