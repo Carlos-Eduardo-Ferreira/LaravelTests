@@ -19,7 +19,7 @@ name('dashboard');
 
 // routes middleware guest - start
 Route::middleware('guest')->group(function () {
-    Route::get('register', [App\Http\Controllers\Auth\RegisteredUserController::class, 'create'])->name('register.create');
+    Route::get('register', [App\Http\Controllers\Auth\RegisteredUserController::class, 'create'])->name('register');
     Route::post('register', [App\Http\Controllers\Auth\RegisteredUserController::class, 'store'])->name('register.store');
 
     Route::get('login', [App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'create'])->name('login');

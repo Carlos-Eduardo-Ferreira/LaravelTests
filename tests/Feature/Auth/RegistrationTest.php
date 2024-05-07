@@ -15,7 +15,7 @@ class RegistrationTest extends TestCase
     #[Test]
     public function registration_screen_can_be_rendered(): void
     {
-        $response = $this->get(route('register.create'));
+        $response = $this->get(route('register'));
 
         $response->assertStatus(200);
     }
