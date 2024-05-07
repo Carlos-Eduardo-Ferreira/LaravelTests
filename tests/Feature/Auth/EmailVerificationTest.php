@@ -5,6 +5,7 @@ namespace Tests\Feature\Auth;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Verified;
+use PHPUnit\Framework\Attributes\Test;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Event;
@@ -15,7 +16,7 @@ class EmailVerificationTest extends TestCase
 {
     use RefreshDatabase, WithFaker;
 
-    /** @test */
+    #[Test]    
     public function email_verification_screen_can_be_rendered(): void
     {
         $user = User::factory()->create([
@@ -28,7 +29,7 @@ class EmailVerificationTest extends TestCase
         $response->assertStatus(200);
     }
 
-    /** @test */
+    #[Test]    
     public function email_can_be_verified(): void
     {
         $user = User::factory()->create([
@@ -59,7 +60,7 @@ class EmailVerificationTest extends TestCase
         $response->assertRedirect(RouteServiceProvider::HOME.'?verified=1');
     }
 
-    /** @test */
+    #[Test]    
     public function email_is_not_verified_with_invalid_hash(): void
     {
         $user = User::factory()->create([
