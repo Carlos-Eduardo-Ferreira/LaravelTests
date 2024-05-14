@@ -7,14 +7,13 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Verified;
 use PHPUnit\Framework\Attributes\Test;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\URL;
 use Tests\TestCase;
 
 class EmailVerificationTest extends TestCase
 {
-    use RefreshDatabase, WithFaker;
+    use RefreshDatabase;
 
     #[Test]    
     public function email_verification_screen_can_be_rendered(): void

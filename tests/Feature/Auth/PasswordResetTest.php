@@ -6,13 +6,12 @@ use App\Models\User;
 use Illuminate\Auth\Notifications\ResetPassword;
 use PHPUnit\Framework\Attributes\Test;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Notification;
 use Tests\TestCase;
 
 class PasswordResetTest extends TestCase
 {
-    use RefreshDatabase, WithFaker;
+    use RefreshDatabase;
 
     #[Test]
     public function reset_password_link_screen_can_be_rendered(): void

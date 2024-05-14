@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="/home/user/Documentos/Project/laravel-tests/phpunit.xml" tests="25" assertions="61" errors="0" failures="0" skipped="0" time="1.762823">
+    <testsuite name="Unit" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.067507">
+      <testsuite name="Tests\Unit\UserTest" file="/home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.067507">
+        <testcase name="check_if_user_columns_is_correct" file="/home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php" line="12" class="Tests\Unit\UserTest" classname="Tests.Unit.UserTest" assertions="1" time="0.067507"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="Feature" tests="24" assertions="60" errors="0" failures="0" skipped="0" time="1.695315">
+      <testsuite name="Tests\Feature\Auth\AuthenticationTest" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php" tests="4" assertions="8" errors="0" failures="0" skipped="0" time="0.570260">
+        <testcase name="login_screen_can_be_rendered" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php" line="17" class="Tests\Feature\Auth\AuthenticationTest" classname="Tests.Feature.Auth.AuthenticationTest" assertions="1" time="0.211315"/>
+        <testcase name="users_can_authenticate_using_the_login_screen" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php" line="25" class="Tests\Feature\Auth\AuthenticationTest" classname="Tests.Feature.Auth.AuthenticationTest" assertions="3" time="0.067152"/>
+        <testcase name="users_can_not_authenticate_with_invalid_password" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php" line="40" class="Tests\Feature\Auth\AuthenticationTest" classname="Tests.Feature.Auth.AuthenticationTest" assertions="1" time="0.248522"/>
+        <testcase name="users_can_logout" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php" line="53" class="Tests\Feature\Auth\AuthenticationTest" classname="Tests.Feature.Auth.AuthenticationTest" assertions="3" time="0.043271"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\Auth\EmailVerificationTest" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php" tests="3" assertions="6" errors="0" failures="0" skipped="0" time="0.120316">
+        <testcase name="email_verification_screen_can_be_rendered" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php" line="20" class="Tests\Feature\Auth\EmailVerificationTest" classname="Tests.Feature.Auth.EmailVerificationTest" assertions="1" time="0.037742"/>
+        <testcase name="email_can_be_verified" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php" line="33" class="Tests\Feature\Auth\EmailVerificationTest" classname="Tests.Feature.Auth.EmailVerificationTest" assertions="4" time="0.041847"/>
+        <testcase name="email_is_not_verified_with_invalid_hash" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php" line="64" class="Tests\Feature\Auth\EmailVerificationTest" classname="Tests.Feature.Auth.EmailVerificationTest" assertions="1" time="0.040727"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\Auth\PasswordConfirmationTest" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php" tests="3" assertions="4" errors="0" failures="0" skipped="0" time="0.349383">
+        <testcase name="confirm_password_screen_can_be_rendered" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php" line="16" class="Tests\Feature\Auth\PasswordConfirmationTest" classname="Tests.Feature.Auth.PasswordConfirmationTest" assertions="1" time="0.054856"/>
+        <testcase name="password_can_be_confirmed" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php" line="27" class="Tests\Feature\Auth\PasswordConfirmationTest" classname="Tests.Feature.Auth.PasswordConfirmationTest" assertions="2" time="0.044450"/>
+        <testcase name="password_is_not_confirmed_with_invalid_password" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php" line="42" class="Tests\Feature\Auth\PasswordConfirmationTest" classname="Tests.Feature.Auth.PasswordConfirmationTest" assertions="1" time="0.250076"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\Auth\PasswordResetTest" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php" tests="4" assertions="8" errors="0" failures="0" skipped="0" time="0.196035">
+        <testcase name="reset_password_link_screen_can_be_rendered" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php" line="18" class="Tests\Feature\Auth\PasswordResetTest" classname="Tests.Feature.Auth.PasswordResetTest" assertions="1" time="0.041639"/>
+        <testcase name="reset_password_link_can_be_requested" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php" line="26" class="Tests\Feature\Auth\PasswordResetTest" classname="Tests.Feature.Auth.PasswordResetTest" assertions="1" time="0.045549"/>
+        <testcase name="reset_password_screen_can_be_rendered" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php" line="40" class="Tests\Feature\Auth\PasswordResetTest" classname="Tests.Feature.Auth.PasswordResetTest" assertions="2" time="0.055761"/>
+        <testcase name="password_can_be_reset_with_valid_token" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php" line="60" class="Tests\Feature\Auth\PasswordResetTest" classname="Tests.Feature.Auth.PasswordResetTest" assertions="4" time="0.053086"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\Auth\PasswordUpdateTest" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordUpdateTest.php" tests="2" assertions="8" errors="0" failures="0" skipped="0" time="0.087519">
+        <testcase name="password_can_be_updated" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordUpdateTest.php" line="17" class="Tests\Feature\Auth\PasswordUpdateTest" classname="Tests.Feature.Auth.PasswordUpdateTest" assertions="4" time="0.046837"/>
+        <testcase name="correct_password_must_be_provided_to_update_password" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordUpdateTest.php" line="36" class="Tests\Feature\Auth\PasswordUpdateTest" classname="Tests.Feature.Auth.PasswordUpdateTest" assertions="4" time="0.040681"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\Auth\RegistrationTest" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php" tests="2" assertions="4" errors="0" failures="0" skipped="0" time="0.086063">
+        <testcase name="registration_screen_can_be_rendered" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php" line="16" class="Tests\Feature\Auth\RegistrationTest" classname="Tests.Feature.Auth.RegistrationTest" assertions="1" time="0.045852"/>
+        <testcase name="new_users_can_register" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php" line="24" class="Tests\Feature\Auth\RegistrationTest" classname="Tests.Feature.Auth.RegistrationTest" assertions="3" time="0.040212"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\DashboardTest" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.049050">
+        <testcase name="only_logged_in_users_can_see_dashboard_screen" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php" line="16" class="Tests\Feature\DashboardTest" classname="Tests.Feature.DashboardTest" assertions="1" time="0.049050"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\ProfileTest" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php" tests="5" assertions="21" errors="0" failures="0" skipped="0" time="0.236690">
+        <testcase name="profile_page_is_displayed" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php" line="16" class="Tests\Feature\ProfileTest" classname="Tests.Feature.ProfileTest" assertions="1" time="0.060017"/>
+        <testcase name="profile_information_can_be_updated" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php" line="27" class="Tests\Feature\ProfileTest" classname="Tests.Feature.ProfileTest" assertions="6" time="0.052122"/>
+        <testcase name="email_verification_status_is_unchanged_when_the_email_address_is_unchanged" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php" line="48" class="Tests\Feature\ProfileTest" classname="Tests.Feature.ProfileTest" assertions="4" time="0.043185"/>
+        <testcase name="user_can_delete_their_account" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php" line="65" class="Tests\Feature\ProfileTest" classname="Tests.Feature.ProfileTest" assertions="5" time="0.041639"/>
+        <testcase name="correct_password_must_be_provided_to_delete_account" file="/home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php" line="82" class="Tests\Feature\ProfileTest" classname="Tests.Feature.ProfileTest" assertions="5" time="0.039727"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
