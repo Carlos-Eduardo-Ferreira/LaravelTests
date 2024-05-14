@@ -5,12 +5,11 @@ namespace Tests\Feature\Auth;
 use App\Models\User;
 use PHPUnit\Framework\Attributes\Test;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class PasswordConfirmationTest extends TestCase
 {
-    use RefreshDatabase, WithFaker;
+    use RefreshDatabase;
 
     #[Test]
     public function confirm_password_screen_can_be_rendered(): void

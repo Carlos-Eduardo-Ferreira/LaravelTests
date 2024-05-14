@@ -88,13 +88,13 @@ Not Covered mutants:
  }
 
 
-6) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:16    [M] PublicVisibility
+6) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:15    [M] PublicVisibility
 
 --- Original
 +++ New
 @@ @@
  {
-     use RefreshDatabase, WithFaker;
+     use RefreshDatabase;
      #[Test]
 -    public function login_screen_can_be_rendered(): void
 +    protected function login_screen_can_be_rendered(): void
@@ -103,7 +103,7 @@ Not Covered mutants:
          $response->assertStatus(200);
 
 
-7) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:21    [M] DecrementInteger
+7) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:20    [M] DecrementInteger
 
 --- Original
 +++ New
@@ -118,7 +118,7 @@ Not Covered mutants:
      public function users_can_authenticate_using_the_login_screen(): void
 
 
-8) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:21    [M] IncrementInteger
+8) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:20    [M] IncrementInteger
 
 --- Original
 +++ New
@@ -133,7 +133,7 @@ Not Covered mutants:
      public function users_can_authenticate_using_the_login_screen(): void
 
 
-9) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:21    [M] MethodCallRemoval
+9) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:20    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -148,7 +148,7 @@ Not Covered mutants:
      public function users_can_authenticate_using_the_login_screen(): void
 
 
-10) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:24    [M] PublicVisibility
+10) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:23    [M] PublicVisibility
 
 --- Original
 +++ New
@@ -163,7 +163,7 @@ Not Covered mutants:
          $response = $this->post(route('login.store'), ['email' => $user->email, 'password' => 'password']);
 
 
-11) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:29    [M] ArrayItemRemoval
+11) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:28    [M] ArrayItemRemoval
 
 --- Original
 +++ New
@@ -178,7 +178,7 @@ Not Covered mutants:
      }
 
 
-12) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:30    [M] ArrayItem
+12) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:29    [M] ArrayItem
 
 --- Original
 +++ New
@@ -193,7 +193,7 @@ Not Covered mutants:
      }
 
 
-13) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:34    [M] MethodCallRemoval
+13) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:33    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -208,7 +208,7 @@ Not Covered mutants:
      #[Test]
 
 
-14) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:36    [M] MethodCallRemoval
+14) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:35    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -223,7 +223,7 @@ Not Covered mutants:
      public function users_can_not_authenticate_with_invalid_password(): void
 
 
-15) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:39    [M] PublicVisibility
+15) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:38    [M] PublicVisibility
 
 --- Original
 +++ New
@@ -238,7 +238,7 @@ Not Covered mutants:
          $this->post(route('login.store'), ['email' => $user->email, 'password' => 'wrong-password']);
 
 
-16) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:44    [M] ArrayItemRemoval
+16) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:43    [M] ArrayItemRemoval
 
 --- Original
 +++ New
@@ -253,7 +253,7 @@ Not Covered mutants:
      #[Test]
 
 
-17) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:44    [M] MethodCallRemoval
+17) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:43    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -268,7 +268,7 @@ Not Covered mutants:
      #[Test]
 
 
-18) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:45    [M] ArrayItem
+18) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:44    [M] ArrayItem
 
 --- Original
 +++ New
@@ -283,7 +283,7 @@ Not Covered mutants:
      #[Test]
 
 
-19) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:49    [M] MethodCallRemoval
+19) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:48    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -298,7 +298,7 @@ Not Covered mutants:
      public function users_can_logout(): void
 
 
-20) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:52    [M] PublicVisibility
+20) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:51    [M] PublicVisibility
 
 --- Original
 +++ New
@@ -313,7 +313,7 @@ Not Covered mutants:
          $response = $this->actingAs($user)->post(route('logout.destroy'));
 
 
-21) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:59    [M] MethodCallRemoval
+21) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:58    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -328,7 +328,7 @@ Not Covered mutants:
  }
 
 
-22) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:61    [M] MethodCallRemoval
+22) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:60    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -342,13 +342,13 @@ Not Covered mutants:
  }
 
 
-23) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:19    [M] PublicVisibility
+23) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:18    [M] PublicVisibility
 
 --- Original
 +++ New
 @@ @@
  {
-     use RefreshDatabase, WithFaker;
+     use RefreshDatabase;
      #[Test]
 -    public function email_verification_screen_can_be_rendered(): void
 +    protected function email_verification_screen_can_be_rendered(): void
@@ -357,7 +357,7 @@ Not Covered mutants:
          $response = $this->actingAs($user)->get(route('verify_email.notice'));
 
 
-24) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:22    [M] ArrayItemRemoval
+24) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:21    [M] ArrayItemRemoval
 
 --- Original
 +++ New
@@ -372,7 +372,7 @@ Not Covered mutants:
      }
 
 
-25) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:29    [M] DecrementInteger
+25) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:28    [M] DecrementInteger
 
 --- Original
 +++ New
@@ -387,7 +387,7 @@ Not Covered mutants:
      public function email_can_be_verified(): void
 
 
-26) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:29    [M] IncrementInteger
+26) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:28    [M] IncrementInteger
 
 --- Original
 +++ New
@@ -402,7 +402,7 @@ Not Covered mutants:
      public function email_can_be_verified(): void
 
 
-27) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:29    [M] MethodCallRemoval
+27) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:28    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -417,7 +417,7 @@ Not Covered mutants:
      public function email_can_be_verified(): void
 
 
-28) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:32    [M] PublicVisibility
+28) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:31    [M] PublicVisibility
 
 --- Original
 +++ New
@@ -432,7 +432,7 @@ Not Covered mutants:
          Event::fake();
 
 
-29) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:35    [M] ArrayItemRemoval
+29) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:34    [M] ArrayItemRemoval
 
 --- Original
 +++ New
@@ -447,7 +447,7 @@ Not Covered mutants:
          $response = $this->actingAs($user)->get($verificationUrl);
 
 
-30) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:39    [M] MethodCallRemoval
+30) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:38    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -462,7 +462,7 @@ Not Covered mutants:
          Event::assertDispatched(Verified::class);
 
 
-31) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:43    [M] DecrementInteger
+31) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:42    [M] DecrementInteger
 
 --- Original
 +++ New
@@ -477,7 +477,7 @@ Not Covered mutants:
          $this->assertTrue($user->fresh()->hasVerifiedEmail());
 
 
-32) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:43    [M] IncrementInteger
+32) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:42    [M] IncrementInteger
 
 --- Original
 +++ New
@@ -492,7 +492,7 @@ Not Covered mutants:
          $this->assertTrue($user->fresh()->hasVerifiedEmail());
 
 
-33) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:44    [M] ArrayItemRemoval
+33) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:43    [M] ArrayItemRemoval
 
 --- Original
 +++ New
@@ -507,7 +507,7 @@ Not Covered mutants:
          $this->assertTrue($user->fresh()->hasVerifiedEmail());
 
 
-34) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:45    [M] ArrayItem
+34) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:44    [M] ArrayItem
 
 --- Original
 +++ New
@@ -522,7 +522,7 @@ Not Covered mutants:
          $this->assertTrue($user->fresh()->hasVerifiedEmail());
 
 
-35) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:46    [M] ArrayItem
+35) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:45    [M] ArrayItem
 
 --- Original
 +++ New
@@ -537,7 +537,7 @@ Not Covered mutants:
          $this->assertTrue($user->fresh()->hasVerifiedEmail());
 
 
-36) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:53    [M] MethodCallRemoval
+36) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:52    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -552,7 +552,7 @@ Not Covered mutants:
      }
 
 
-37) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:55    [M] MethodCallRemoval
+37) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:54    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -567,7 +567,7 @@ Not Covered mutants:
      #[Test]
 
 
-38) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:60    [M] Concat
+38) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:59    [M] Concat
 
 --- Original
 +++ New
@@ -582,7 +582,7 @@ Not Covered mutants:
      public function email_is_not_verified_with_invalid_hash(): void
 
 
-39) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:60    [M] ConcatOperandRemoval
+39) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:59    [M] ConcatOperandRemoval
 
 --- Original
 +++ New
@@ -597,7 +597,7 @@ Not Covered mutants:
      public function email_is_not_verified_with_invalid_hash(): void
 
 
-40) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:60    [M] ConcatOperandRemoval
+40) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:59    [M] ConcatOperandRemoval
 
 --- Original
 +++ New
@@ -612,7 +612,7 @@ Not Covered mutants:
      public function email_is_not_verified_with_invalid_hash(): void
 
 
-41) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:60    [M] MethodCallRemoval
+41) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:59    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -627,7 +627,7 @@ Not Covered mutants:
      public function email_is_not_verified_with_invalid_hash(): void
 
 
-42) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:63    [M] PublicVisibility
+42) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:62    [M] PublicVisibility
 
 --- Original
 +++ New
@@ -642,7 +642,7 @@ Not Covered mutants:
          $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(60), ['id' => $user->id, 'hash' => sha1('wrong-email')]);
 
 
-43) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:66    [M] ArrayItemRemoval
+43) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:65    [M] ArrayItemRemoval
 
 --- Original
 +++ New
@@ -659,7 +659,7 @@ Not Covered mutants:
  }
 
 
-44) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:72    [M] DecrementInteger
+44) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:71    [M] DecrementInteger
 
 --- Original
 +++ New
@@ -675,7 +675,7 @@ Not Covered mutants:
  }
 
 
-45) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:72    [M] IncrementInteger
+45) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:71    [M] IncrementInteger
 
 --- Original
 +++ New
@@ -691,7 +691,7 @@ Not Covered mutants:
  }
 
 
-46) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:73    [M] ArrayItemRemoval
+46) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:72    [M] ArrayItemRemoval
 
 --- Original
 +++ New
@@ -707,7 +707,7 @@ Not Covered mutants:
  }
 
 
-47) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:74    [M] ArrayItem
+47) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:73    [M] ArrayItem
 
 --- Original
 +++ New
@@ -723,7 +723,7 @@ Not Covered mutants:
  }
 
 
-48) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:75    [M] ArrayItem
+48) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:74    [M] ArrayItem
 
 --- Original
 +++ New
@@ -739,7 +739,7 @@ Not Covered mutants:
  }
 
 
-49) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:79    [M] MethodCallRemoval
+49) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:78    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -754,7 +754,7 @@ Not Covered mutants:
  }
 
 
-50) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:82    [M] MethodCallRemoval
+50) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:81    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -768,13 +768,13 @@ Not Covered mutants:
  }
 
 
-51) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:15    [M] PublicVisibility
+51) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:14    [M] PublicVisibility
 
 --- Original
 +++ New
 @@ @@
  {
-     use RefreshDatabase, WithFaker;
+     use RefreshDatabase;
      #[Test]
 -    public function confirm_password_screen_can_be_rendered(): void
 +    protected function confirm_password_screen_can_be_rendered(): void
@@ -783,7 +783,7 @@ Not Covered mutants:
          $response = $this->actingAs($user)->get(route('confirm_password.show'));
 
 
-52) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:23    [M] DecrementInteger
+52) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:22    [M] DecrementInteger
 
 --- Original
 +++ New
@@ -798,7 +798,7 @@ Not Covered mutants:
      public function password_can_be_confirmed(): void
 
 
-53) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:23    [M] IncrementInteger
+53) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:22    [M] IncrementInteger
 
 --- Original
 +++ New
@@ -813,7 +813,7 @@ Not Covered mutants:
      public function password_can_be_confirmed(): void
 
 
-54) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:23    [M] MethodCallRemoval
+54) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:22    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -828,7 +828,7 @@ Not Covered mutants:
      public function password_can_be_confirmed(): void
 
 
-55) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:26    [M] PublicVisibility
+55) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:25    [M] PublicVisibility
 
 --- Original
 +++ New
@@ -843,7 +843,7 @@ Not Covered mutants:
          $response = $this->actingAs($user)->post(route('confirm_password.store'), ['password' => 'password']);
 
 
-56) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:32    [M] ArrayItemRemoval
+56) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:31    [M] ArrayItemRemoval
 
 --- Original
 +++ New
@@ -858,7 +858,7 @@ Not Covered mutants:
      }
 
 
-57) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:36    [M] MethodCallRemoval
+57) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:35    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -873,7 +873,7 @@ Not Covered mutants:
      #[Test]
 
 
-58) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:38    [M] MethodCallRemoval
+58) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:37    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -888,7 +888,7 @@ Not Covered mutants:
      public function password_is_not_confirmed_with_invalid_password(): void
 
 
-59) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:41    [M] PublicVisibility
+59) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:40    [M] PublicVisibility
 
 --- Original
 +++ New
@@ -903,7 +903,7 @@ Not Covered mutants:
          $response = $this->actingAs($user)->post(route('confirm_password.store'), ['password' => 'wrong-password']);
 
 
-60) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:47    [M] ArrayItemRemoval
+60) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:46    [M] ArrayItemRemoval
 
 --- Original
 +++ New
@@ -918,7 +918,7 @@ Not Covered mutants:
  }
 
 
-61) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:51    [M] MethodCallRemoval
+61) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:50    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -932,13 +932,13 @@ Not Covered mutants:
  }
 
 
-62) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:17    [M] PublicVisibility
+62) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:16    [M] PublicVisibility
 
 --- Original
 +++ New
 @@ @@
  {
-     use RefreshDatabase, WithFaker;
+     use RefreshDatabase;
      #[Test]
 -    public function reset_password_link_screen_can_be_rendered(): void
 +    protected function reset_password_link_screen_can_be_rendered(): void
@@ -947,7 +947,7 @@ Not Covered mutants:
          $response->assertStatus(200);
 
 
-63) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:22    [M] DecrementInteger
+63) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:21    [M] DecrementInteger
 
 --- Original
 +++ New
@@ -962,7 +962,7 @@ Not Covered mutants:
      public function reset_password_link_can_be_requested(): void
 
 
-64) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:22    [M] IncrementInteger
+64) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:21    [M] IncrementInteger
 
 --- Original
 +++ New
@@ -977,7 +977,7 @@ Not Covered mutants:
      public function reset_password_link_can_be_requested(): void
 
 
-65) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:22    [M] MethodCallRemoval
+65) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:21    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -992,7 +992,7 @@ Not Covered mutants:
      public function reset_password_link_can_be_requested(): void
 
 
-66) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:25    [M] PublicVisibility
+66) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:24    [M] PublicVisibility
 
 --- Original
 +++ New
@@ -1007,7 +1007,7 @@ Not Covered mutants:
          $user = User::factory()->create();
 
 
-67) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:28    [M] MethodCallRemoval
+67) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:27    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1022,7 +1022,7 @@ Not Covered mutants:
          Notification::assertSentTo($user, ResetPassword::class);
 
 
-68) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:32    [M] ArrayItemRemoval
+68) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:31    [M] ArrayItemRemoval
 
 --- Original
 +++ New
@@ -1037,7 +1037,7 @@ Not Covered mutants:
      #[Test]
 
 
-69) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:32    [M] MethodCallRemoval
+69) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:31    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1052,7 +1052,7 @@ Not Covered mutants:
      #[Test]
 
 
-70) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:33    [M] ArrayItem
+70) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:32    [M] ArrayItem
 
 --- Original
 +++ New
@@ -1067,7 +1067,7 @@ Not Covered mutants:
      #[Test]
 
 
-71) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:36    [M] MethodCallRemoval
+71) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:35    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1082,7 +1082,7 @@ Not Covered mutants:
      public function reset_password_screen_can_be_rendered(): void
 
 
-72) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:39    [M] PublicVisibility
+72) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:38    [M] PublicVisibility
 
 --- Original
 +++ New
@@ -1097,7 +1097,7 @@ Not Covered mutants:
          $user = User::factory()->create();
 
 
-73) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:42    [M] MethodCallRemoval
+73) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:41    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1112,7 +1112,7 @@ Not Covered mutants:
          Notification::assertSentTo($user, ResetPassword::class, function ($notification) {
 
 
-74) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:46    [M] ArrayItemRemoval
+74) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:45    [M] ArrayItemRemoval
 
 --- Original
 +++ New
@@ -1127,7 +1127,7 @@ Not Covered mutants:
              $response->assertStatus(200);
 
 
-75) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:46    [M] MethodCallRemoval
+75) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:45    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1142,7 +1142,7 @@ Not Covered mutants:
              $response->assertStatus(200);
 
 
-76) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:47    [M] ArrayItem
+76) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:46    [M] ArrayItem
 
 --- Original
 +++ New
@@ -1157,7 +1157,7 @@ Not Covered mutants:
              $response->assertStatus(200);
 
 
-77) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:50    [M] MethodCallRemoval
+77) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:49    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1176,7 +1176,7 @@ Not Covered mutants:
      public function password_can_be_reset_with_valid_token(): void
 
 
-78) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:51    [M] ArrayItem
+78) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:50    [M] ArrayItem
 
 --- Original
 +++ New
@@ -1191,7 +1191,7 @@ Not Covered mutants:
          });
 
 
-79) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:51    [M] ArrayItemRemoval
+79) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:50    [M] ArrayItemRemoval
 
 --- Original
 +++ New
@@ -1206,7 +1206,7 @@ Not Covered mutants:
          });
 
 
-80) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:53    [M] DecrementInteger
+80) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:52    [M] DecrementInteger
 
 --- Original
 +++ New
@@ -1221,7 +1221,7 @@ Not Covered mutants:
      }
 
 
-81) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:53    [M] IncrementInteger
+81) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:52    [M] IncrementInteger
 
 --- Original
 +++ New
@@ -1236,7 +1236,7 @@ Not Covered mutants:
      }
 
 
-82) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:53    [M] MethodCallRemoval
+82) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:52    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1251,7 +1251,7 @@ Not Covered mutants:
      }
 
 
-83) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:55    [M] TrueValue
+83) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:54    [M] TrueValue
 
 --- Original
 +++ New
@@ -1266,7 +1266,7 @@ Not Covered mutants:
      #[Test]
 
 
-84) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:59    [M] PublicVisibility
+84) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:58    [M] PublicVisibility
 
 --- Original
 +++ New
@@ -1281,7 +1281,7 @@ Not Covered mutants:
          $user = User::factory()->create();
 
 
-85) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:62    [M] MethodCallRemoval
+85) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:61    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1296,7 +1296,7 @@ Not Covered mutants:
          Notification::assertSentTo($user, ResetPassword::class, function ($notification) use ($user) {
 
 
-86) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:66    [M] ArrayItemRemoval
+86) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:65    [M] ArrayItemRemoval
 
 --- Original
 +++ New
@@ -1311,7 +1311,7 @@ Not Covered mutants:
              $response->assertSessionHasNoErrors()->assertRedirect(route('login'));
 
 
-87) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:66    [M] MethodCallRemoval
+87) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:65    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1326,7 +1326,7 @@ Not Covered mutants:
              $response->assertSessionHasNoErrors()->assertRedirect(route('login'));
 
 
-88) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:67    [M] ArrayItem
+88) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:66    [M] ArrayItem
 
 --- Original
 +++ New
@@ -1341,7 +1341,7 @@ Not Covered mutants:
              $response->assertSessionHasNoErrors()->assertRedirect(route('login'));
 
 
-89) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:70    [M] MethodCallRemoval
+89) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:69    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1359,7 +1359,7 @@ Not Covered mutants:
  }
 
 
-90) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:71    [M] ArrayItemRemoval
+90) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:70    [M] ArrayItemRemoval
 
 --- Original
 +++ New
@@ -1376,7 +1376,7 @@ Not Covered mutants:
  }
 
 
-91) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:72    [M] ArrayItem
+91) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:71    [M] ArrayItem
 
 --- Original
 +++ New
@@ -1393,7 +1393,7 @@ Not Covered mutants:
  }
 
 
-92) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:73    [M] ArrayItem
+92) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:72    [M] ArrayItem
 
 --- Original
 +++ New
@@ -1410,7 +1410,7 @@ Not Covered mutants:
  }
 
 
-93) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:78    [M] MethodCallRemoval
+93) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:77    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1426,7 +1426,7 @@ Not Covered mutants:
  }
 
 
-94) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:81    [M] TrueValue
+94) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:80    [M] TrueValue
 
 --- Original
 +++ New
@@ -1441,13 +1441,13 @@ Not Covered mutants:
  }
 
 
-95) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordUpdateTest.php:16    [M] PublicVisibility
+95) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordUpdateTest.php:15    [M] PublicVisibility
 
 --- Original
 +++ New
 @@ @@
  {
-     use RefreshDatabase, WithFaker;
+     use RefreshDatabase;
      #[Test]
 -    public function password_can_be_updated(): void
 +    protected function password_can_be_updated(): void
@@ -1456,7 +1456,7 @@ Not Covered mutants:
          $response = $this->actingAs($user)->from(route('profile.edit'))->put(route('password.update'), ['current_password' => 'password', 'password' => 'new-password', 'password_confirmation' => 'new-password']);
 
 
-96) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordUpdateTest.php:23    [M] ArrayItemRemoval
+96) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordUpdateTest.php:22    [M] ArrayItemRemoval
 
 --- Original
 +++ New
@@ -1471,7 +1471,7 @@ Not Covered mutants:
      }
 
 
-97) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordUpdateTest.php:29    [M] MethodCallRemoval
+97) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordUpdateTest.php:28    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1486,7 +1486,7 @@ Not Covered mutants:
      #[Test]
 
 
-98) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordUpdateTest.php:32    [M] MethodCallRemoval
+98) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordUpdateTest.php:31    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1501,7 +1501,7 @@ Not Covered mutants:
      public function correct_password_must_be_provided_to_update_password(): void
 
 
-99) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordUpdateTest.php:35    [M] PublicVisibility
+99) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordUpdateTest.php:34    [M] PublicVisibility
 
 --- Original
 +++ New
@@ -1516,7 +1516,7 @@ Not Covered mutants:
          $response = $this->actingAs($user)->from(route('profile.edit'))->put(route('password.update'), ['current_password' => 'wrong-password', 'password' => 'new-password', 'password_confirmation' => 'new-password']);
 
 
-100) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordUpdateTest.php:42    [M] ArrayItemRemoval
+100) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordUpdateTest.php:41    [M] ArrayItemRemoval
 
 --- Original
 +++ New
@@ -1531,7 +1531,7 @@ Not Covered mutants:
  }
 
 
-101) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordUpdateTest.php:48    [M] MethodCallRemoval
+101) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordUpdateTest.php:47    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1545,13 +1545,13 @@ Not Covered mutants:
  }
 
 
-102) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php:15    [M] PublicVisibility
+102) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php:14    [M] PublicVisibility
 
 --- Original
 +++ New
 @@ @@
  {
-     use RefreshDatabase, WithFaker;
+     use RefreshDatabase;
      #[Test]
 -    public function registration_screen_can_be_rendered(): void
 +    protected function registration_screen_can_be_rendered(): void
@@ -1560,7 +1560,7 @@ Not Covered mutants:
          $response->assertStatus(200);
 
 
-103) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php:20    [M] DecrementInteger
+103) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php:19    [M] DecrementInteger
 
 --- Original
 +++ New
@@ -1575,7 +1575,7 @@ Not Covered mutants:
      public function new_users_can_register(): void
 
 
-104) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php:20    [M] IncrementInteger
+104) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php:19    [M] IncrementInteger
 
 --- Original
 +++ New
@@ -1590,7 +1590,7 @@ Not Covered mutants:
      public function new_users_can_register(): void
 
 
-105) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php:20    [M] MethodCallRemoval
+105) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php:19    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1605,7 +1605,7 @@ Not Covered mutants:
      public function new_users_can_register(): void
 
 
-106) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php:23    [M] PublicVisibility
+106) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php:22    [M] PublicVisibility
 
 --- Original
 +++ New
@@ -1620,7 +1620,7 @@ Not Covered mutants:
          $this->assertAuthenticated();
 
 
-107) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php:26    [M] ArrayItemRemoval
+107) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php:25    [M] ArrayItemRemoval
 
 --- Original
 +++ New
@@ -1636,7 +1636,7 @@ Not Covered mutants:
  }
 
 
-108) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php:33    [M] MethodCallRemoval
+108) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php:32    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1651,7 +1651,7 @@ Not Covered mutants:
  }
 
 
-109) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php:35    [M] MethodCallRemoval
+109) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php:34    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1665,70 +1665,261 @@ Not Covered mutants:
  }
 
 
-110) /home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php:15    [M] PublicVisibility
+110) /home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php:14    [M] PublicVisibility
 
 --- Original
 +++ New
 @@ @@
  {
-     use RefreshDatabase, WithFaker;
+     use RefreshDatabase;
      #[Test]
 -    public function only_logged_in_users_can_see_dashboard_screen(): void
 +    protected function only_logged_in_users_can_see_dashboard_screen(): void
      {
          $user = User::factory()->create();
-         $response = $this->actingAs($user)->get(route('dashboard'));
+         // Acting as the created user and accessing the dashboard route
 
 
-111) /home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php:22    [M] DecrementInteger
+111) /home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php:23    [M] DecrementInteger
 
 --- Original
 +++ New
 @@ @@
-     {
-         $user = User::factory()->create();
+         // Acting as the created user and accessing the dashboard route
          $response = $this->actingAs($user)->get(route('dashboard'));
+         // Asserting that the status of the response is 200 (OK)
 -        $response->assertStatus(200);
 +        $response->assertStatus(199);
+         // Asserting that the response contains the text 'Dashboard'
+         $response->assertSee('Dashboard');
      }
- }
 
 
-112) /home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php:22    [M] IncrementInteger
+112) /home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php:23    [M] IncrementInteger
 
 --- Original
 +++ New
 @@ @@
-     {
-         $user = User::factory()->create();
+         // Acting as the created user and accessing the dashboard route
          $response = $this->actingAs($user)->get(route('dashboard'));
+         // Asserting that the status of the response is 200 (OK)
 -        $response->assertStatus(200);
 +        $response->assertStatus(201);
+         // Asserting that the response contains the text 'Dashboard'
+         $response->assertSee('Dashboard');
      }
- }
 
 
-113) /home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php:22    [M] MethodCallRemoval
+113) /home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php:23    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $user = User::factory()->create();
+         // Acting as the created user and accessing the dashboard route
+         $response = $this->actingAs($user)->get(route('dashboard'));
+-        // Asserting that the status of the response is 200 (OK)
+-        $response->assertStatus(200);
++        
+         // Asserting that the response contains the text 'Dashboard'
+         $response->assertSee('Dashboard');
+     }
+
+
+114) /home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php:26    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $response = $this->actingAs($user)->get(route('dashboard'));
+         // Asserting that the status of the response is 200 (OK)
+         $response->assertStatus(200);
+-        // Asserting that the response contains the text 'Dashboard'
+-        $response->assertSee('Dashboard');
++        
+     }
+     #[Test]
+     public function non_logged_in_users_cannot_see_dashboard_screen(): void
+
+
+115) /home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php:29    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $response->assertSee('Dashboard');
+     }
+     #[Test]
+-    public function non_logged_in_users_cannot_see_dashboard_screen(): void
++    protected function non_logged_in_users_cannot_see_dashboard_screen(): void
+     {
+         // Accessing the dashboard route without being authenticated
+         $response = $this->get(route('dashboard'));
+
+
+116) /home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php:36    [M] MethodCallRemoval
 
 --- Original
 +++ New
 @@ @@
      {
+         // Accessing the dashboard route without being authenticated
+         $response = $this->get(route('dashboard'));
+-        // Asserting that the user is redirected to the login page
+-        $response->assertRedirect(route('login'));
++        
+     }
+     #[Test]
+     public function logged_in_user_can_access_dashboard(): void
+
+
+117) /home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php:39    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $response->assertRedirect(route('login'));
+     }
+     #[Test]
+-    public function logged_in_user_can_access_dashboard(): void
++    protected function logged_in_user_can_access_dashboard(): void
+     {
          $user = User::factory()->create();
+         // Acting as the created user and accessing the dashboard route
+
+
+118) /home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php:48    [M] DecrementInteger
+
+--- Original
++++ New
+@@ @@
+         // Acting as the created user and accessing the dashboard route
          $response = $this->actingAs($user)->get(route('dashboard'));
+         // Asserting that the status of the response is 200 (OK)
+-        $this->assertEquals(200, $response->status(), 'Authenticated user could not access the dashboard.');
++        $this->assertEquals(199, $response->status(), 'Authenticated user could not access the dashboard.');
+     }
+     #[Test]
+     public function ensure_response_content_for_dashboard(): void
+
+
+119) /home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php:48    [M] IncrementInteger
+
+--- Original
++++ New
+@@ @@
+         // Acting as the created user and accessing the dashboard route
+         $response = $this->actingAs($user)->get(route('dashboard'));
+         // Asserting that the status of the response is 200 (OK)
+-        $this->assertEquals(200, $response->status(), 'Authenticated user could not access the dashboard.');
++        $this->assertEquals(201, $response->status(), 'Authenticated user could not access the dashboard.');
+     }
+     #[Test]
+     public function ensure_response_content_for_dashboard(): void
+
+
+120) /home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php:48    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $user = User::factory()->create();
+         // Acting as the created user and accessing the dashboard route
+         $response = $this->actingAs($user)->get(route('dashboard'));
+-        // Asserting that the status of the response is 200 (OK)
+-        $this->assertEquals(200, $response->status(), 'Authenticated user could not access the dashboard.');
++        
+     }
+     #[Test]
+     public function ensure_response_content_for_dashboard(): void
+
+
+121) /home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php:51    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $this->assertEquals(200, $response->status(), 'Authenticated user could not access the dashboard.');
+     }
+     #[Test]
+-    public function ensure_response_content_for_dashboard(): void
++    protected function ensure_response_content_for_dashboard(): void
+     {
+         $user = User::factory()->create();
+         // Acting as the created user and accessing the dashboard route
+
+
+122) /home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php:60    [M] DecrementInteger
+
+--- Original
++++ New
+@@ @@
+         // Acting as the created user and accessing the dashboard route
+         $response = $this->actingAs($user)->get(route('dashboard'));
+         // Asserting that the status of the response is 200 (OK)
 -        $response->assertStatus(200);
++        $response->assertStatus(199);
+         // Asserting that the view returned is the 'dashboard' view
+         $response->assertViewIs('dashboard');
+     }
+ }
+
+
+123) /home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php:60    [M] IncrementInteger
+
+--- Original
++++ New
+@@ @@
+         // Acting as the created user and accessing the dashboard route
+         $response = $this->actingAs($user)->get(route('dashboard'));
+         // Asserting that the status of the response is 200 (OK)
+-        $response->assertStatus(200);
++        $response->assertStatus(201);
+         // Asserting that the view returned is the 'dashboard' view
+         $response->assertViewIs('dashboard');
+     }
+ }
+
+
+124) /home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php:60    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $user = User::factory()->create();
+         // Acting as the created user and accessing the dashboard route
+         $response = $this->actingAs($user)->get(route('dashboard'));
+-        // Asserting that the status of the response is 200 (OK)
+-        $response->assertStatus(200);
++        
+         // Asserting that the view returned is the 'dashboard' view
+         $response->assertViewIs('dashboard');
+     }
+ }
+
+
+125) /home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php:63    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $response = $this->actingAs($user)->get(route('dashboard'));
+         // Asserting that the status of the response is 200 (OK)
+         $response->assertStatus(200);
+-        // Asserting that the view returned is the 'dashboard' view
+-        $response->assertViewIs('dashboard');
 +        
      }
  }
 
 
-114) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:15    [M] PublicVisibility
+126) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:14    [M] PublicVisibility
 
 --- Original
 +++ New
 @@ @@
  {
-     use RefreshDatabase, WithFaker;
+     use RefreshDatabase;
      #[Test]
 -    public function profile_page_is_displayed(): void
 +    protected function profile_page_is_displayed(): void
@@ -1737,7 +1928,7 @@ Not Covered mutants:
          $response = $this->actingAs($user)->get(route('profile.edit'));
 
 
-115) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:23    [M] MethodCallRemoval
+127) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:22    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1752,7 +1943,7 @@ Not Covered mutants:
      public function profile_information_can_be_updated(): void
 
 
-116) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:26    [M] PublicVisibility
+128) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:25    [M] PublicVisibility
 
 --- Original
 +++ New
@@ -1767,7 +1958,7 @@ Not Covered mutants:
          $response = $this->actingAs($user)->patch(route('profile.update'), ['name' => 'Test User', 'email' => 'test@example.com']);
 
 
-117) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:32    [M] ArrayItemRemoval
+129) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:31    [M] ArrayItemRemoval
 
 --- Original
 +++ New
@@ -1782,7 +1973,7 @@ Not Covered mutants:
          $this->assertSame('Test User', $user->name);
 
 
-118) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:37    [M] MethodCallRemoval
+130) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:36    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1797,7 +1988,7 @@ Not Covered mutants:
          $this->assertSame('test@example.com', $user->email);
 
 
-119) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:40    [M] MethodCallRemoval
+131) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:39    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1812,7 +2003,7 @@ Not Covered mutants:
          $this->assertNull($user->email_verified_at);
 
 
-120) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:42    [M] MethodCallRemoval
+132) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:41    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1827,7 +2018,7 @@ Not Covered mutants:
      }
 
 
-121) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:43    [M] MethodCallRemoval
+133) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:42    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1842,7 +2033,7 @@ Not Covered mutants:
      #[Test]
 
 
-122) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:44    [M] MethodCallRemoval
+134) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:43    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1857,7 +2048,7 @@ Not Covered mutants:
      public function email_verification_status_is_unchanged_when_the_email_address_is_unchanged(): void
 
 
-123) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:47    [M] PublicVisibility
+135) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:46    [M] PublicVisibility
 
 --- Original
 +++ New
@@ -1872,7 +2063,7 @@ Not Covered mutants:
          $response = $this->actingAs($user)->patch(route('profile.update'), ['name' => 'Test User', 'email' => $user->email]);
 
 
-124) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:53    [M] ArrayItemRemoval
+136) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:52    [M] ArrayItemRemoval
 
 --- Original
 +++ New
@@ -1887,7 +2078,7 @@ Not Covered mutants:
      }
 
 
-125) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:55    [M] ArrayItem
+137) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:54    [M] ArrayItem
 
 --- Original
 +++ New
@@ -1902,7 +2093,7 @@ Not Covered mutants:
      }
 
 
-126) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:58    [M] MethodCallRemoval
+138) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:57    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1917,7 +2108,7 @@ Not Covered mutants:
      #[Test]
 
 
-127) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:61    [M] MethodCallRemoval
+139) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:60    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1932,7 +2123,7 @@ Not Covered mutants:
      public function user_can_delete_their_account(): void
 
 
-128) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:64    [M] PublicVisibility
+140) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:63    [M] PublicVisibility
 
 --- Original
 +++ New
@@ -1947,7 +2138,7 @@ Not Covered mutants:
          $response = $this->actingAs($user)->delete(route('profile.destroy'), ['password' => 'password']);
 
 
-129) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:70    [M] ArrayItemRemoval
+141) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:69    [M] ArrayItemRemoval
 
 --- Original
 +++ New
@@ -1962,7 +2153,7 @@ Not Covered mutants:
          $this->assertNull($user->fresh());
 
 
-130) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:74    [M] MethodCallRemoval
+142) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:73    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1977,7 +2168,7 @@ Not Covered mutants:
      }
 
 
-131) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:77    [M] MethodCallRemoval
+143) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:76    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -1992,7 +2183,7 @@ Not Covered mutants:
      #[Test]
 
 
-132) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:78    [M] MethodCallRemoval
+144) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:77    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -2007,7 +2198,7 @@ Not Covered mutants:
      public function correct_password_must_be_provided_to_delete_account(): void
 
 
-133) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:81    [M] PublicVisibility
+145) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:80    [M] PublicVisibility
 
 --- Original
 +++ New
@@ -2022,7 +2213,7 @@ Not Covered mutants:
          $response = $this->actingAs($user)->from(route('profile.edit'))->delete(route('profile.destroy'), ['password' => 'wrong-password']);
 
 
-134) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:88    [M] ArrayItemRemoval
+146) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:87    [M] ArrayItemRemoval
 
 --- Original
 +++ New
@@ -2038,7 +2229,7 @@ Not Covered mutants:
  }
 
 
-135) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:92    [M] MethodCallRemoval
+147) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:91    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -2053,7 +2244,7 @@ Not Covered mutants:
  }
 
 
-136) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:95    [M] MethodCallRemoval
+148) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:94    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -2067,7 +2258,7 @@ Not Covered mutants:
  }
 
 
-137) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:11    [M] PublicVisibility
+149) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:11    [M] PublicVisibility
 
 --- Original
 +++ New
@@ -2079,136 +2270,120 @@ Not Covered mutants:
 +    protected function check_if_user_columns_are_correct(): void
      {
          $user = new User();
-         // Colunas esperadas
+         // Expected columns
 
 
-138) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:17    [M] ArrayItemRemoval
+150) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:17    [M] ArrayItemRemoval
 
 --- Original
 +++ New
 @@ @@
      {
          $user = new User();
-         // Colunas esperadas
+         // Expected columns
 -        $columns_expected = ['name', 'email', 'password'];
 +        $columns_expected = ['email', 'password'];
-         // Verifica se as colunas esperadas não estão vazias
-         $this->assertNotEmpty($columns_expected, 'O array de colunas esperadas não deve estar vazio.');
-         // Colunas que o modelo User realmente aceita
+         // Columns that the User model actually accepts
+         $fillable_columns = $user->getFillable();
+         // Check if all expected columns are present
 
 
-139) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:25    [M] MethodCallRemoval
+151) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:27    [M] Foreach_
 
 --- Original
 +++ New
 @@ @@
-         $user = new User();
-         // Colunas esperadas
-         $columns_expected = ['name', 'email', 'password'];
--        // Verifica se as colunas esperadas não estão vazias
--        $this->assertNotEmpty($columns_expected, 'O array de colunas esperadas não deve estar vazio.');
-+        
-         // Colunas que o modelo User realmente aceita
+         // Columns that the User model actually accepts
          $fillable_columns = $user->getFillable();
-         // Verifica se todas as colunas esperadas estão presentes
-
-
-140) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:31    [M] Foreach_
-
---- Original
-+++ New
-@@ @@
-         // Colunas que o modelo User realmente aceita
-         $fillable_columns = $user->getFillable();
-         // Verifica se todas as colunas esperadas estão presentes
+         // Check if all expected columns are present
 -        foreach ($columns_expected as $column) {
 +        foreach ([] as $column) {
-             $this->assertContains($column, $fillable_columns, "A coluna {$column} não está presente.");
+             $this->assertContains($column, $fillable_columns, "The column {$column} is not present.");
          }
-         // Verifica se não há colunas extras
+         // Check if there are no extra columns
 
 
-141) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:32    [M] MethodCallRemoval
+152) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:28    [M] MethodCallRemoval
 
 --- Original
 +++ New
 @@ @@
          $fillable_columns = $user->getFillable();
-         // Verifica se todas as colunas esperadas estão presentes
+         // Check if all expected columns are present
          foreach ($columns_expected as $column) {
--            $this->assertContains($column, $fillable_columns, "A coluna {$column} não está presente.");
+-            $this->assertContains($column, $fillable_columns, "The column {$column} is not present.");
 +            
          }
-         // Verifica se não há colunas extras
+         // Check if there are no extra columns
          $extra_columns = array_diff($fillable_columns, $columns_expected);
 
 
-142) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:36    [M] UnwrapArrayDiff
+153) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:32    [M] UnwrapArrayDiff
 
 --- Original
 +++ New
 @@ @@
-             $this->assertContains($column, $fillable_columns, "A coluna {$column} não está presente.");
+             $this->assertContains($column, $fillable_columns, "The column {$column} is not present.");
          }
-         // Verifica se não há colunas extras
+         // Check if there are no extra columns
 -        $extra_columns = array_diff($fillable_columns, $columns_expected);
 +        $extra_columns = $fillable_columns;
-         $this->assertCount(0, $extra_columns, 'Existem colunas extras no modelo.');
+         $this->assertCount(0, $extra_columns, 'There are extra columns in the model.');
      }
      #[Test]
 
 
-143) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:37    [M] DecrementInteger
+154) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:33    [M] DecrementInteger
 
 --- Original
 +++ New
 @@ @@
          }
-         // Verifica se não há colunas extras
+         // Check if there are no extra columns
          $extra_columns = array_diff($fillable_columns, $columns_expected);
--        $this->assertCount(0, $extra_columns, 'Existem colunas extras no modelo.');
-+        $this->assertCount(-1, $extra_columns, 'Existem colunas extras no modelo.');
-     }
-     #[Test]
-     public function check_if_user_columns_are_not_empty(): void
-
-
-144) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:37    [M] IncrementInteger
-
---- Original
-+++ New
-@@ @@
-         }
-         // Verifica se não há colunas extras
-         $extra_columns = array_diff($fillable_columns, $columns_expected);
--        $this->assertCount(0, $extra_columns, 'Existem colunas extras no modelo.');
-+        $this->assertCount(1, $extra_columns, 'Existem colunas extras no modelo.');
+-        $this->assertCount(0, $extra_columns, 'There are extra columns in the model.');
++        $this->assertCount(-1, $extra_columns, 'There are extra columns in the model.');
      }
      #[Test]
      public function check_if_user_columns_are_not_empty(): void
 
 
-145) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:37    [M] MethodCallRemoval
+155) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:33    [M] IncrementInteger
 
 --- Original
 +++ New
 @@ @@
          }
-         // Verifica se não há colunas extras
+         // Check if there are no extra columns
          $extra_columns = array_diff($fillable_columns, $columns_expected);
--        $this->assertCount(0, $extra_columns, 'Existem colunas extras no modelo.');
+-        $this->assertCount(0, $extra_columns, 'There are extra columns in the model.');
++        $this->assertCount(1, $extra_columns, 'There are extra columns in the model.');
+     }
+     #[Test]
+     public function check_if_user_columns_are_not_empty(): void
+
+
+156) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:33    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         }
+         // Check if there are no extra columns
+         $extra_columns = array_diff($fillable_columns, $columns_expected);
+-        $this->assertCount(0, $extra_columns, 'There are extra columns in the model.');
 +        
      }
      #[Test]
      public function check_if_user_columns_are_not_empty(): void
 
 
-146) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:40    [M] PublicVisibility
+157) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:36    [M] PublicVisibility
 
 --- Original
 +++ New
 @@ @@
-         $this->assertCount(0, $extra_columns, 'Existem colunas extras no modelo.');
+         $this->assertCount(0, $extra_columns, 'There are extra columns in the model.');
      }
      #[Test]
 -    public function check_if_user_columns_are_not_empty(): void
@@ -2218,7 +2393,7 @@ Not Covered mutants:
          $fillable_columns = $user->getFillable();
 
 
-147) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:48    [M] MethodCallRemoval
+158) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:44    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -2226,20 +2401,20 @@ Not Covered mutants:
      {
          $user = new User();
          $fillable_columns = $user->getFillable();
--        // Verifica se as colunas permitidas não estão vazias
--        $this->assertNotEmpty($fillable_columns, 'As colunas permitidas não devem estar vazias.');
+-        // Check if the fillable columns are not empty
+-        $this->assertNotEmpty($fillable_columns, 'The fillable columns should not be empty.');
 +        
      }
      #[Test]
      public function check_if_user_columns_include_email_and_password(): void
 
 
-148) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:51    [M] PublicVisibility
+159) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:47    [M] PublicVisibility
 
 --- Original
 +++ New
 @@ @@
-         $this->assertNotEmpty($fillable_columns, 'As colunas permitidas não devem estar vazias.');
+         $this->assertNotEmpty($fillable_columns, 'The fillable columns should not be empty.');
      }
      #[Test]
 -    public function check_if_user_columns_include_email_and_password(): void
@@ -2249,7 +2424,7 @@ Not Covered mutants:
          $fillable_columns = $user->getFillable();
 
 
-149) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:59    [M] MethodCallRemoval
+160) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:55    [M] MethodCallRemoval
 
 --- Original
 +++ New
@@ -2257,23 +2432,23 @@ Not Covered mutants:
      {
          $user = new User();
          $fillable_columns = $user->getFillable();
--        // Verifica se as colunas incluem 'email' e 'password'
--        $this->assertContains('email', $fillable_columns, "A coluna 'email' não está presente.");
+-        // Check if the columns include 'email' and 'password'
+-        $this->assertContains('email', $fillable_columns, "The column 'email' is not present.");
 +        
-         $this->assertContains('password', $fillable_columns, "A coluna 'password' não está presente.");
+         $this->assertContains('password', $fillable_columns, "The column 'password' is not present.");
      }
  }
 
 
-150) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:60    [M] MethodCallRemoval
+161) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:56    [M] MethodCallRemoval
 
 --- Original
 +++ New
 @@ @@
          $fillable_columns = $user->getFillable();
-         // Verifica se as colunas incluem 'email' e 'password'
-         $this->assertContains('email', $fillable_columns, "A coluna 'email' não está presente.");
--        $this->assertContains('password', $fillable_columns, "A coluna 'password' não está presente.");
+         // Check if the columns include 'email' and 'password'
+         $this->assertContains('email', $fillable_columns, "The column 'email' is not present.");
+-        $this->assertContains('password', $fillable_columns, "The column 'password' is not present.");
 +        
      }
  }

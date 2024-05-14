@@ -5,12 +5,11 @@ namespace Tests\Feature\Auth;
 use App\Providers\RouteServiceProvider;
 use PHPUnit\Framework\Attributes\Test;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class RegistrationTest extends TestCase
 {
-    use RefreshDatabase, WithFaker;
+    use RefreshDatabase;
 
     #[Test]
     public function registration_screen_can_be_rendered(): void
