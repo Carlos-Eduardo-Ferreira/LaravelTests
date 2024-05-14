@@ -1,0 +1,2279 @@
+Escaped mutants:
+================
+
+Timed Out mutants:
+==================
+
+Skipped mutants:
+================
+
+Not Covered mutants:
+====================
+
+1) /home/user/Documentos/Project/laravel-tests/tests/CreatesApplication.php:13    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     /**
+      * Creates the application.
+      */
+-    public function createApplication(): Application
++    protected function createApplication(): Application
+     {
+         $app = require __DIR__ . '/../bootstrap/app.php';
+         $app->make(Kernel::class)->bootstrap();
+
+
+2) /home/user/Documentos/Project/laravel-tests/tests/CreatesApplication.php:15    [M] Concat
+
+--- Original
++++ New
+@@ @@
+      */
+     public function createApplication(): Application
+     {
+-        $app = require __DIR__ . '/../bootstrap/app.php';
++        $app = require '/../bootstrap/app.php' . __DIR__;
+         $app->make(Kernel::class)->bootstrap();
+         return $app;
+     }
+ }
+
+
+3) /home/user/Documentos/Project/laravel-tests/tests/CreatesApplication.php:15    [M] ConcatOperandRemoval
+
+--- Original
++++ New
+@@ @@
+      */
+     public function createApplication(): Application
+     {
+-        $app = require __DIR__ . '/../bootstrap/app.php';
++        $app = require '/../bootstrap/app.php';
+         $app->make(Kernel::class)->bootstrap();
+         return $app;
+     }
+ }
+
+
+4) /home/user/Documentos/Project/laravel-tests/tests/CreatesApplication.php:15    [M] ConcatOperandRemoval
+
+--- Original
++++ New
+@@ @@
+      */
+     public function createApplication(): Application
+     {
+-        $app = require __DIR__ . '/../bootstrap/app.php';
++        $app = require __DIR__;
+         $app->make(Kernel::class)->bootstrap();
+         return $app;
+     }
+ }
+
+
+5) /home/user/Documentos/Project/laravel-tests/tests/CreatesApplication.php:17    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     public function createApplication(): Application
+     {
+         $app = require __DIR__ . '/../bootstrap/app.php';
+-        $app->make(Kernel::class)->bootstrap();
++        
+         return $app;
+     }
+ }
+
+
+6) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:16    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+ {
+     use RefreshDatabase, WithFaker;
+     #[Test]
+-    public function login_screen_can_be_rendered(): void
++    protected function login_screen_can_be_rendered(): void
+     {
+         $response = $this->get(route('login'));
+         $response->assertStatus(200);
+
+
+7) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:21    [M] DecrementInteger
+
+--- Original
++++ New
+@@ @@
+     public function login_screen_can_be_rendered(): void
+     {
+         $response = $this->get(route('login'));
+-        $response->assertStatus(200);
++        $response->assertStatus(199);
+     }
+     #[Test]
+     public function users_can_authenticate_using_the_login_screen(): void
+
+
+8) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:21    [M] IncrementInteger
+
+--- Original
++++ New
+@@ @@
+     public function login_screen_can_be_rendered(): void
+     {
+         $response = $this->get(route('login'));
+-        $response->assertStatus(200);
++        $response->assertStatus(201);
+     }
+     #[Test]
+     public function users_can_authenticate_using_the_login_screen(): void
+
+
+9) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:21    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     public function login_screen_can_be_rendered(): void
+     {
+         $response = $this->get(route('login'));
+-        $response->assertStatus(200);
++        
+     }
+     #[Test]
+     public function users_can_authenticate_using_the_login_screen(): void
+
+
+10) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:24    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $response->assertStatus(200);
+     }
+     #[Test]
+-    public function users_can_authenticate_using_the_login_screen(): void
++    protected function users_can_authenticate_using_the_login_screen(): void
+     {
+         $user = User::factory()->create();
+         $response = $this->post(route('login.store'), ['email' => $user->email, 'password' => 'password']);
+
+
+11) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:29    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+     public function users_can_authenticate_using_the_login_screen(): void
+     {
+         $user = User::factory()->create();
+-        $response = $this->post(route('login.store'), ['email' => $user->email, 'password' => 'password']);
++        $response = $this->post(route('login.store'), ['password' => 'password']);
+         $this->assertAuthenticated();
+         $response->assertRedirect(RouteServiceProvider::HOME);
+     }
+
+
+12) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:30    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     public function users_can_authenticate_using_the_login_screen(): void
+     {
+         $user = User::factory()->create();
+-        $response = $this->post(route('login.store'), ['email' => $user->email, 'password' => 'password']);
++        $response = $this->post(route('login.store'), ['email' > $user->email, 'password' => 'password']);
+         $this->assertAuthenticated();
+         $response->assertRedirect(RouteServiceProvider::HOME);
+     }
+
+
+13) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:34    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create();
+         $response = $this->post(route('login.store'), ['email' => $user->email, 'password' => 'password']);
+-        $this->assertAuthenticated();
++        
+         $response->assertRedirect(RouteServiceProvider::HOME);
+     }
+     #[Test]
+
+
+14) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:36    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $user = User::factory()->create();
+         $response = $this->post(route('login.store'), ['email' => $user->email, 'password' => 'password']);
+         $this->assertAuthenticated();
+-        $response->assertRedirect(RouteServiceProvider::HOME);
++        
+     }
+     #[Test]
+     public function users_can_not_authenticate_with_invalid_password(): void
+
+
+15) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:39    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $response->assertRedirect(RouteServiceProvider::HOME);
+     }
+     #[Test]
+-    public function users_can_not_authenticate_with_invalid_password(): void
++    protected function users_can_not_authenticate_with_invalid_password(): void
+     {
+         $user = User::factory()->create();
+         $this->post(route('login.store'), ['email' => $user->email, 'password' => 'wrong-password']);
+
+
+16) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:44    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+     public function users_can_not_authenticate_with_invalid_password(): void
+     {
+         $user = User::factory()->create();
+-        $this->post(route('login.store'), ['email' => $user->email, 'password' => 'wrong-password']);
++        $this->post(route('login.store'), ['password' => 'wrong-password']);
+         $this->assertGuest();
+     }
+     #[Test]
+
+
+17) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:44    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     public function users_can_not_authenticate_with_invalid_password(): void
+     {
+         $user = User::factory()->create();
+-        $this->post(route('login.store'), ['email' => $user->email, 'password' => 'wrong-password']);
++        
+         $this->assertGuest();
+     }
+     #[Test]
+
+
+18) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:45    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     public function users_can_not_authenticate_with_invalid_password(): void
+     {
+         $user = User::factory()->create();
+-        $this->post(route('login.store'), ['email' => $user->email, 'password' => 'wrong-password']);
++        $this->post(route('login.store'), ['email' > $user->email, 'password' => 'wrong-password']);
+         $this->assertGuest();
+     }
+     #[Test]
+
+
+19) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:49    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create();
+         $this->post(route('login.store'), ['email' => $user->email, 'password' => 'wrong-password']);
+-        $this->assertGuest();
++        
+     }
+     #[Test]
+     public function users_can_logout(): void
+
+
+20) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:52    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $this->assertGuest();
+     }
+     #[Test]
+-    public function users_can_logout(): void
++    protected function users_can_logout(): void
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->post(route('logout.destroy'));
+
+
+21) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:59    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->post(route('logout.destroy'));
+-        $this->assertGuest();
++        
+         $response->assertRedirect(route('welcome'));
+     }
+ }
+
+
+22) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/AuthenticationTest.php:61    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->post(route('logout.destroy'));
+         $this->assertGuest();
+-        $response->assertRedirect(route('welcome'));
++        
+     }
+ }
+
+
+23) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:19    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+ {
+     use RefreshDatabase, WithFaker;
+     #[Test]
+-    public function email_verification_screen_can_be_rendered(): void
++    protected function email_verification_screen_can_be_rendered(): void
+     {
+         $user = User::factory()->create(['email_verified_at' => null]);
+         $response = $this->actingAs($user)->get(route('verify_email.notice'));
+
+
+24) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:22    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+     #[Test]
+     public function email_verification_screen_can_be_rendered(): void
+     {
+-        $user = User::factory()->create(['email_verified_at' => null]);
++        $user = User::factory()->create([]);
+         $response = $this->actingAs($user)->get(route('verify_email.notice'));
+         $response->assertStatus(200);
+     }
+
+
+25) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:29    [M] DecrementInteger
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create(['email_verified_at' => null]);
+         $response = $this->actingAs($user)->get(route('verify_email.notice'));
+-        $response->assertStatus(200);
++        $response->assertStatus(199);
+     }
+     #[Test]
+     public function email_can_be_verified(): void
+
+
+26) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:29    [M] IncrementInteger
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create(['email_verified_at' => null]);
+         $response = $this->actingAs($user)->get(route('verify_email.notice'));
+-        $response->assertStatus(200);
++        $response->assertStatus(201);
+     }
+     #[Test]
+     public function email_can_be_verified(): void
+
+
+27) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:29    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create(['email_verified_at' => null]);
+         $response = $this->actingAs($user)->get(route('verify_email.notice'));
+-        $response->assertStatus(200);
++        
+     }
+     #[Test]
+     public function email_can_be_verified(): void
+
+
+28) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:32    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $response->assertStatus(200);
+     }
+     #[Test]
+-    public function email_can_be_verified(): void
++    protected function email_can_be_verified(): void
+     {
+         $user = User::factory()->create(['email_verified_at' => null]);
+         Event::fake();
+
+
+29) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:35    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+     #[Test]
+     public function email_can_be_verified(): void
+     {
+-        $user = User::factory()->create(['email_verified_at' => null]);
++        $user = User::factory()->create([]);
+         Event::fake();
+         $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(60), ['id' => $user->id, 'hash' => sha1($user->email)]);
+         $response = $this->actingAs($user)->get($verificationUrl);
+
+
+30) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:39    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     public function email_can_be_verified(): void
+     {
+         $user = User::factory()->create(['email_verified_at' => null]);
+-        Event::fake();
++        
+         $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(60), ['id' => $user->id, 'hash' => sha1($user->email)]);
+         $response = $this->actingAs($user)->get($verificationUrl);
+         Event::assertDispatched(Verified::class);
+
+
+31) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:43    [M] DecrementInteger
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create(['email_verified_at' => null]);
+         Event::fake();
+-        $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(60), ['id' => $user->id, 'hash' => sha1($user->email)]);
++        $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(59), ['id' => $user->id, 'hash' => sha1($user->email)]);
+         $response = $this->actingAs($user)->get($verificationUrl);
+         Event::assertDispatched(Verified::class);
+         $this->assertTrue($user->fresh()->hasVerifiedEmail());
+
+
+32) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:43    [M] IncrementInteger
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create(['email_verified_at' => null]);
+         Event::fake();
+-        $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(60), ['id' => $user->id, 'hash' => sha1($user->email)]);
++        $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(61), ['id' => $user->id, 'hash' => sha1($user->email)]);
+         $response = $this->actingAs($user)->get($verificationUrl);
+         Event::assertDispatched(Verified::class);
+         $this->assertTrue($user->fresh()->hasVerifiedEmail());
+
+
+33) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:44    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create(['email_verified_at' => null]);
+         Event::fake();
+-        $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(60), ['id' => $user->id, 'hash' => sha1($user->email)]);
++        $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(60), ['hash' => sha1($user->email)]);
+         $response = $this->actingAs($user)->get($verificationUrl);
+         Event::assertDispatched(Verified::class);
+         $this->assertTrue($user->fresh()->hasVerifiedEmail());
+
+
+34) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:45    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create(['email_verified_at' => null]);
+         Event::fake();
+-        $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(60), ['id' => $user->id, 'hash' => sha1($user->email)]);
++        $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(60), ['id' > $user->id, 'hash' => sha1($user->email)]);
+         $response = $this->actingAs($user)->get($verificationUrl);
+         Event::assertDispatched(Verified::class);
+         $this->assertTrue($user->fresh()->hasVerifiedEmail());
+
+
+35) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:46    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create(['email_verified_at' => null]);
+         Event::fake();
+-        $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(60), ['id' => $user->id, 'hash' => sha1($user->email)]);
++        $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(60), ['id' => $user->id, 'hash' > sha1($user->email)]);
+         $response = $this->actingAs($user)->get($verificationUrl);
+         Event::assertDispatched(Verified::class);
+         $this->assertTrue($user->fresh()->hasVerifiedEmail());
+
+
+36) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:53    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         Event::fake();
+         $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(60), ['id' => $user->id, 'hash' => sha1($user->email)]);
+         $response = $this->actingAs($user)->get($verificationUrl);
+-        Event::assertDispatched(Verified::class);
++        
+         $this->assertTrue($user->fresh()->hasVerifiedEmail());
+         $response->assertRedirect(RouteServiceProvider::HOME . '?verified=1');
+     }
+
+
+37) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:55    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(60), ['id' => $user->id, 'hash' => sha1($user->email)]);
+         $response = $this->actingAs($user)->get($verificationUrl);
+         Event::assertDispatched(Verified::class);
+-        $this->assertTrue($user->fresh()->hasVerifiedEmail());
++        
+         $response->assertRedirect(RouteServiceProvider::HOME . '?verified=1');
+     }
+     #[Test]
+
+
+38) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:60    [M] Concat
+
+--- Original
++++ New
+@@ @@
+         $response = $this->actingAs($user)->get($verificationUrl);
+         Event::assertDispatched(Verified::class);
+         $this->assertTrue($user->fresh()->hasVerifiedEmail());
+-        $response->assertRedirect(RouteServiceProvider::HOME . '?verified=1');
++        $response->assertRedirect('?verified=1' . RouteServiceProvider::HOME);
+     }
+     #[Test]
+     public function email_is_not_verified_with_invalid_hash(): void
+
+
+39) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:60    [M] ConcatOperandRemoval
+
+--- Original
++++ New
+@@ @@
+         $response = $this->actingAs($user)->get($verificationUrl);
+         Event::assertDispatched(Verified::class);
+         $this->assertTrue($user->fresh()->hasVerifiedEmail());
+-        $response->assertRedirect(RouteServiceProvider::HOME . '?verified=1');
++        $response->assertRedirect('?verified=1');
+     }
+     #[Test]
+     public function email_is_not_verified_with_invalid_hash(): void
+
+
+40) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:60    [M] ConcatOperandRemoval
+
+--- Original
++++ New
+@@ @@
+         $response = $this->actingAs($user)->get($verificationUrl);
+         Event::assertDispatched(Verified::class);
+         $this->assertTrue($user->fresh()->hasVerifiedEmail());
+-        $response->assertRedirect(RouteServiceProvider::HOME . '?verified=1');
++        $response->assertRedirect(RouteServiceProvider::HOME);
+     }
+     #[Test]
+     public function email_is_not_verified_with_invalid_hash(): void
+
+
+41) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:60    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $response = $this->actingAs($user)->get($verificationUrl);
+         Event::assertDispatched(Verified::class);
+         $this->assertTrue($user->fresh()->hasVerifiedEmail());
+-        $response->assertRedirect(RouteServiceProvider::HOME . '?verified=1');
++        
+     }
+     #[Test]
+     public function email_is_not_verified_with_invalid_hash(): void
+
+
+42) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:63    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $response->assertRedirect(RouteServiceProvider::HOME . '?verified=1');
+     }
+     #[Test]
+-    public function email_is_not_verified_with_invalid_hash(): void
++    protected function email_is_not_verified_with_invalid_hash(): void
+     {
+         $user = User::factory()->create(['email_verified_at' => null]);
+         $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(60), ['id' => $user->id, 'hash' => sha1('wrong-email')]);
+
+
+43) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:66    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+     #[Test]
+     public function email_is_not_verified_with_invalid_hash(): void
+     {
+-        $user = User::factory()->create(['email_verified_at' => null]);
++        $user = User::factory()->create([]);
+         $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(60), ['id' => $user->id, 'hash' => sha1('wrong-email')]);
+         $this->actingAs($user)->get($verificationUrl);
+         $this->assertFalse($user->fresh()->hasVerifiedEmail());
+     }
+ }
+
+
+44) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:72    [M] DecrementInteger
+
+--- Original
++++ New
+@@ @@
+     public function email_is_not_verified_with_invalid_hash(): void
+     {
+         $user = User::factory()->create(['email_verified_at' => null]);
+-        $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(60), ['id' => $user->id, 'hash' => sha1('wrong-email')]);
++        $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(59), ['id' => $user->id, 'hash' => sha1('wrong-email')]);
+         $this->actingAs($user)->get($verificationUrl);
+         $this->assertFalse($user->fresh()->hasVerifiedEmail());
+     }
+ }
+
+
+45) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:72    [M] IncrementInteger
+
+--- Original
++++ New
+@@ @@
+     public function email_is_not_verified_with_invalid_hash(): void
+     {
+         $user = User::factory()->create(['email_verified_at' => null]);
+-        $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(60), ['id' => $user->id, 'hash' => sha1('wrong-email')]);
++        $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(61), ['id' => $user->id, 'hash' => sha1('wrong-email')]);
+         $this->actingAs($user)->get($verificationUrl);
+         $this->assertFalse($user->fresh()->hasVerifiedEmail());
+     }
+ }
+
+
+46) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:73    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+     public function email_is_not_verified_with_invalid_hash(): void
+     {
+         $user = User::factory()->create(['email_verified_at' => null]);
+-        $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(60), ['id' => $user->id, 'hash' => sha1('wrong-email')]);
++        $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(60), ['hash' => sha1('wrong-email')]);
+         $this->actingAs($user)->get($verificationUrl);
+         $this->assertFalse($user->fresh()->hasVerifiedEmail());
+     }
+ }
+
+
+47) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:74    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     public function email_is_not_verified_with_invalid_hash(): void
+     {
+         $user = User::factory()->create(['email_verified_at' => null]);
+-        $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(60), ['id' => $user->id, 'hash' => sha1('wrong-email')]);
++        $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(60), ['id' > $user->id, 'hash' => sha1('wrong-email')]);
+         $this->actingAs($user)->get($verificationUrl);
+         $this->assertFalse($user->fresh()->hasVerifiedEmail());
+     }
+ }
+
+
+48) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:75    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     public function email_is_not_verified_with_invalid_hash(): void
+     {
+         $user = User::factory()->create(['email_verified_at' => null]);
+-        $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(60), ['id' => $user->id, 'hash' => sha1('wrong-email')]);
++        $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(60), ['id' => $user->id, 'hash' > sha1('wrong-email')]);
+         $this->actingAs($user)->get($verificationUrl);
+         $this->assertFalse($user->fresh()->hasVerifiedEmail());
+     }
+ }
+
+
+49) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:79    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create(['email_verified_at' => null]);
+         $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(60), ['id' => $user->id, 'hash' => sha1('wrong-email')]);
+-        $this->actingAs($user)->get($verificationUrl);
++        
+         $this->assertFalse($user->fresh()->hasVerifiedEmail());
+     }
+ }
+
+
+50) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/EmailVerificationTest.php:82    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $user = User::factory()->create(['email_verified_at' => null]);
+         $verificationUrl = URL::temporarySignedRoute('verify_email.verify', now()->addMinutes(60), ['id' => $user->id, 'hash' => sha1('wrong-email')]);
+         $this->actingAs($user)->get($verificationUrl);
+-        $this->assertFalse($user->fresh()->hasVerifiedEmail());
++        
+     }
+ }
+
+
+51) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:15    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+ {
+     use RefreshDatabase, WithFaker;
+     #[Test]
+-    public function confirm_password_screen_can_be_rendered(): void
++    protected function confirm_password_screen_can_be_rendered(): void
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->get(route('confirm_password.show'));
+
+
+52) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:23    [M] DecrementInteger
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->get(route('confirm_password.show'));
+-        $response->assertStatus(200);
++        $response->assertStatus(199);
+     }
+     #[Test]
+     public function password_can_be_confirmed(): void
+
+
+53) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:23    [M] IncrementInteger
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->get(route('confirm_password.show'));
+-        $response->assertStatus(200);
++        $response->assertStatus(201);
+     }
+     #[Test]
+     public function password_can_be_confirmed(): void
+
+
+54) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:23    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->get(route('confirm_password.show'));
+-        $response->assertStatus(200);
++        
+     }
+     #[Test]
+     public function password_can_be_confirmed(): void
+
+
+55) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:26    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $response->assertStatus(200);
+     }
+     #[Test]
+-    public function password_can_be_confirmed(): void
++    protected function password_can_be_confirmed(): void
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->post(route('confirm_password.store'), ['password' => 'password']);
+
+
+56) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:32    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+     public function password_can_be_confirmed(): void
+     {
+         $user = User::factory()->create();
+-        $response = $this->actingAs($user)->post(route('confirm_password.store'), ['password' => 'password']);
++        $response = $this->actingAs($user)->post(route('confirm_password.store'), []);
+         $response->assertRedirect();
+         $response->assertSessionHasNoErrors();
+     }
+
+
+57) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:36    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->post(route('confirm_password.store'), ['password' => 'password']);
+-        $response->assertRedirect();
++        
+         $response->assertSessionHasNoErrors();
+     }
+     #[Test]
+
+
+58) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:38    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->post(route('confirm_password.store'), ['password' => 'password']);
+         $response->assertRedirect();
+-        $response->assertSessionHasNoErrors();
++        
+     }
+     #[Test]
+     public function password_is_not_confirmed_with_invalid_password(): void
+
+
+59) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:41    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $response->assertSessionHasNoErrors();
+     }
+     #[Test]
+-    public function password_is_not_confirmed_with_invalid_password(): void
++    protected function password_is_not_confirmed_with_invalid_password(): void
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->post(route('confirm_password.store'), ['password' => 'wrong-password']);
+
+
+60) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:47    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+     public function password_is_not_confirmed_with_invalid_password(): void
+     {
+         $user = User::factory()->create();
+-        $response = $this->actingAs($user)->post(route('confirm_password.store'), ['password' => 'wrong-password']);
++        $response = $this->actingAs($user)->post(route('confirm_password.store'), []);
+         $response->assertSessionHasErrors();
+     }
+ }
+
+
+61) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordConfirmationTest.php:51    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->post(route('confirm_password.store'), ['password' => 'wrong-password']);
+-        $response->assertSessionHasErrors();
++        
+     }
+ }
+
+
+62) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:17    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+ {
+     use RefreshDatabase, WithFaker;
+     #[Test]
+-    public function reset_password_link_screen_can_be_rendered(): void
++    protected function reset_password_link_screen_can_be_rendered(): void
+     {
+         $response = $this->get(route('forgot_password.create'));
+         $response->assertStatus(200);
+
+
+63) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:22    [M] DecrementInteger
+
+--- Original
++++ New
+@@ @@
+     public function reset_password_link_screen_can_be_rendered(): void
+     {
+         $response = $this->get(route('forgot_password.create'));
+-        $response->assertStatus(200);
++        $response->assertStatus(199);
+     }
+     #[Test]
+     public function reset_password_link_can_be_requested(): void
+
+
+64) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:22    [M] IncrementInteger
+
+--- Original
++++ New
+@@ @@
+     public function reset_password_link_screen_can_be_rendered(): void
+     {
+         $response = $this->get(route('forgot_password.create'));
+-        $response->assertStatus(200);
++        $response->assertStatus(201);
+     }
+     #[Test]
+     public function reset_password_link_can_be_requested(): void
+
+
+65) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:22    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     public function reset_password_link_screen_can_be_rendered(): void
+     {
+         $response = $this->get(route('forgot_password.create'));
+-        $response->assertStatus(200);
++        
+     }
+     #[Test]
+     public function reset_password_link_can_be_requested(): void
+
+
+66) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:25    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $response->assertStatus(200);
+     }
+     #[Test]
+-    public function reset_password_link_can_be_requested(): void
++    protected function reset_password_link_can_be_requested(): void
+     {
+         Notification::fake();
+         $user = User::factory()->create();
+
+
+67) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:28    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     #[Test]
+     public function reset_password_link_can_be_requested(): void
+     {
+-        Notification::fake();
++        
+         $user = User::factory()->create();
+         $this->post(route('forgot_password.store'), ['email' => $user->email]);
+         Notification::assertSentTo($user, ResetPassword::class);
+
+
+68) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:32    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         Notification::fake();
+         $user = User::factory()->create();
+-        $this->post(route('forgot_password.store'), ['email' => $user->email]);
++        $this->post(route('forgot_password.store'), []);
+         Notification::assertSentTo($user, ResetPassword::class);
+     }
+     #[Test]
+
+
+69) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:32    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         Notification::fake();
+         $user = User::factory()->create();
+-        $this->post(route('forgot_password.store'), ['email' => $user->email]);
++        
+         Notification::assertSentTo($user, ResetPassword::class);
+     }
+     #[Test]
+
+
+70) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:33    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     {
+         Notification::fake();
+         $user = User::factory()->create();
+-        $this->post(route('forgot_password.store'), ['email' => $user->email]);
++        $this->post(route('forgot_password.store'), ['email' > $user->email]);
+         Notification::assertSentTo($user, ResetPassword::class);
+     }
+     #[Test]
+
+
+71) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:36    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         Notification::fake();
+         $user = User::factory()->create();
+         $this->post(route('forgot_password.store'), ['email' => $user->email]);
+-        Notification::assertSentTo($user, ResetPassword::class);
++        
+     }
+     #[Test]
+     public function reset_password_screen_can_be_rendered(): void
+
+
+72) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:39    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         Notification::assertSentTo($user, ResetPassword::class);
+     }
+     #[Test]
+-    public function reset_password_screen_can_be_rendered(): void
++    protected function reset_password_screen_can_be_rendered(): void
+     {
+         Notification::fake();
+         $user = User::factory()->create();
+
+
+73) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:42    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     #[Test]
+     public function reset_password_screen_can_be_rendered(): void
+     {
+-        Notification::fake();
++        
+         $user = User::factory()->create();
+         $this->post(route('forgot_password.store'), ['email' => $user->email]);
+         Notification::assertSentTo($user, ResetPassword::class, function ($notification) {
+
+
+74) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:46    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         Notification::fake();
+         $user = User::factory()->create();
+-        $this->post(route('forgot_password.store'), ['email' => $user->email]);
++        $this->post(route('forgot_password.store'), []);
+         Notification::assertSentTo($user, ResetPassword::class, function ($notification) {
+             $response = $this->get(route('reset_password.create', ['token' => $notification->token]));
+             $response->assertStatus(200);
+
+
+75) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:46    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         Notification::fake();
+         $user = User::factory()->create();
+-        $this->post(route('forgot_password.store'), ['email' => $user->email]);
++        
+         Notification::assertSentTo($user, ResetPassword::class, function ($notification) {
+             $response = $this->get(route('reset_password.create', ['token' => $notification->token]));
+             $response->assertStatus(200);
+
+
+76) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:47    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     {
+         Notification::fake();
+         $user = User::factory()->create();
+-        $this->post(route('forgot_password.store'), ['email' => $user->email]);
++        $this->post(route('forgot_password.store'), ['email' > $user->email]);
+         Notification::assertSentTo($user, ResetPassword::class, function ($notification) {
+             $response = $this->get(route('reset_password.create', ['token' => $notification->token]));
+             $response->assertStatus(200);
+
+
+77) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:50    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         Notification::fake();
+         $user = User::factory()->create();
+         $this->post(route('forgot_password.store'), ['email' => $user->email]);
+-        Notification::assertSentTo($user, ResetPassword::class, function ($notification) {
+-            $response = $this->get(route('reset_password.create', ['token' => $notification->token]));
+-            $response->assertStatus(200);
+-            return true;
+-        });
++        
+     }
+     #[Test]
+     public function password_can_be_reset_with_valid_token(): void
+
+
+78) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:51    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+         $user = User::factory()->create();
+         $this->post(route('forgot_password.store'), ['email' => $user->email]);
+         Notification::assertSentTo($user, ResetPassword::class, function ($notification) {
+-            $response = $this->get(route('reset_password.create', ['token' => $notification->token]));
++            $response = $this->get(route('reset_password.create', ['token' > $notification->token]));
+             $response->assertStatus(200);
+             return true;
+         });
+
+
+79) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:51    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+         $user = User::factory()->create();
+         $this->post(route('forgot_password.store'), ['email' => $user->email]);
+         Notification::assertSentTo($user, ResetPassword::class, function ($notification) {
+-            $response = $this->get(route('reset_password.create', ['token' => $notification->token]));
++            $response = $this->get(route('reset_password.create', []));
+             $response->assertStatus(200);
+             return true;
+         });
+
+
+80) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:53    [M] DecrementInteger
+
+--- Original
++++ New
+@@ @@
+         $this->post(route('forgot_password.store'), ['email' => $user->email]);
+         Notification::assertSentTo($user, ResetPassword::class, function ($notification) {
+             $response = $this->get(route('reset_password.create', ['token' => $notification->token]));
+-            $response->assertStatus(200);
++            $response->assertStatus(199);
+             return true;
+         });
+     }
+
+
+81) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:53    [M] IncrementInteger
+
+--- Original
++++ New
+@@ @@
+         $this->post(route('forgot_password.store'), ['email' => $user->email]);
+         Notification::assertSentTo($user, ResetPassword::class, function ($notification) {
+             $response = $this->get(route('reset_password.create', ['token' => $notification->token]));
+-            $response->assertStatus(200);
++            $response->assertStatus(201);
+             return true;
+         });
+     }
+
+
+82) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:53    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $this->post(route('forgot_password.store'), ['email' => $user->email]);
+         Notification::assertSentTo($user, ResetPassword::class, function ($notification) {
+             $response = $this->get(route('reset_password.create', ['token' => $notification->token]));
+-            $response->assertStatus(200);
++            
+             return true;
+         });
+     }
+
+
+83) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:55    [M] TrueValue
+
+--- Original
++++ New
+@@ @@
+         Notification::assertSentTo($user, ResetPassword::class, function ($notification) {
+             $response = $this->get(route('reset_password.create', ['token' => $notification->token]));
+             $response->assertStatus(200);
+-            return true;
++            return false;
+         });
+     }
+     #[Test]
+
+
+84) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:59    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         });
+     }
+     #[Test]
+-    public function password_can_be_reset_with_valid_token(): void
++    protected function password_can_be_reset_with_valid_token(): void
+     {
+         Notification::fake();
+         $user = User::factory()->create();
+
+
+85) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:62    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     #[Test]
+     public function password_can_be_reset_with_valid_token(): void
+     {
+-        Notification::fake();
++        
+         $user = User::factory()->create();
+         $this->post(route('forgot_password.store'), ['email' => $user->email]);
+         Notification::assertSentTo($user, ResetPassword::class, function ($notification) use ($user) {
+
+
+86) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:66    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         Notification::fake();
+         $user = User::factory()->create();
+-        $this->post(route('forgot_password.store'), ['email' => $user->email]);
++        $this->post(route('forgot_password.store'), []);
+         Notification::assertSentTo($user, ResetPassword::class, function ($notification) use ($user) {
+             $response = $this->post(route('reset_password.store'), ['token' => $notification->token, 'email' => $user->email, 'password' => 'password', 'password_confirmation' => 'password']);
+             $response->assertSessionHasNoErrors()->assertRedirect(route('login'));
+
+
+87) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:66    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         Notification::fake();
+         $user = User::factory()->create();
+-        $this->post(route('forgot_password.store'), ['email' => $user->email]);
++        
+         Notification::assertSentTo($user, ResetPassword::class, function ($notification) use ($user) {
+             $response = $this->post(route('reset_password.store'), ['token' => $notification->token, 'email' => $user->email, 'password' => 'password', 'password_confirmation' => 'password']);
+             $response->assertSessionHasNoErrors()->assertRedirect(route('login'));
+
+
+88) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:67    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     {
+         Notification::fake();
+         $user = User::factory()->create();
+-        $this->post(route('forgot_password.store'), ['email' => $user->email]);
++        $this->post(route('forgot_password.store'), ['email' > $user->email]);
+         Notification::assertSentTo($user, ResetPassword::class, function ($notification) use ($user) {
+             $response = $this->post(route('reset_password.store'), ['token' => $notification->token, 'email' => $user->email, 'password' => 'password', 'password_confirmation' => 'password']);
+             $response->assertSessionHasNoErrors()->assertRedirect(route('login'));
+
+
+89) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:70    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         Notification::fake();
+         $user = User::factory()->create();
+         $this->post(route('forgot_password.store'), ['email' => $user->email]);
+-        Notification::assertSentTo($user, ResetPassword::class, function ($notification) use ($user) {
+-            $response = $this->post(route('reset_password.store'), ['token' => $notification->token, 'email' => $user->email, 'password' => 'password', 'password_confirmation' => 'password']);
+-            $response->assertSessionHasNoErrors()->assertRedirect(route('login'));
+-            return true;
+-        });
++        
+     }
+ }
+
+
+90) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:71    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+         $user = User::factory()->create();
+         $this->post(route('forgot_password.store'), ['email' => $user->email]);
+         Notification::assertSentTo($user, ResetPassword::class, function ($notification) use ($user) {
+-            $response = $this->post(route('reset_password.store'), ['token' => $notification->token, 'email' => $user->email, 'password' => 'password', 'password_confirmation' => 'password']);
++            $response = $this->post(route('reset_password.store'), ['email' => $user->email, 'password' => 'password', 'password_confirmation' => 'password']);
+             $response->assertSessionHasNoErrors()->assertRedirect(route('login'));
+             return true;
+         });
+     }
+ }
+
+
+91) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:72    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+         $user = User::factory()->create();
+         $this->post(route('forgot_password.store'), ['email' => $user->email]);
+         Notification::assertSentTo($user, ResetPassword::class, function ($notification) use ($user) {
+-            $response = $this->post(route('reset_password.store'), ['token' => $notification->token, 'email' => $user->email, 'password' => 'password', 'password_confirmation' => 'password']);
++            $response = $this->post(route('reset_password.store'), ['token' > $notification->token, 'email' => $user->email, 'password' => 'password', 'password_confirmation' => 'password']);
+             $response->assertSessionHasNoErrors()->assertRedirect(route('login'));
+             return true;
+         });
+     }
+ }
+
+
+92) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:73    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+         $user = User::factory()->create();
+         $this->post(route('forgot_password.store'), ['email' => $user->email]);
+         Notification::assertSentTo($user, ResetPassword::class, function ($notification) use ($user) {
+-            $response = $this->post(route('reset_password.store'), ['token' => $notification->token, 'email' => $user->email, 'password' => 'password', 'password_confirmation' => 'password']);
++            $response = $this->post(route('reset_password.store'), ['token' => $notification->token, 'email' > $user->email, 'password' => 'password', 'password_confirmation' => 'password']);
+             $response->assertSessionHasNoErrors()->assertRedirect(route('login'));
+             return true;
+         });
+     }
+ }
+
+
+93) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:78    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $this->post(route('forgot_password.store'), ['email' => $user->email]);
+         Notification::assertSentTo($user, ResetPassword::class, function ($notification) use ($user) {
+             $response = $this->post(route('reset_password.store'), ['token' => $notification->token, 'email' => $user->email, 'password' => 'password', 'password_confirmation' => 'password']);
+-            $response->assertSessionHasNoErrors()->assertRedirect(route('login'));
++            
+             return true;
+         });
+     }
+ }
+
+
+94) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordResetTest.php:81    [M] TrueValue
+
+--- Original
++++ New
+@@ @@
+         Notification::assertSentTo($user, ResetPassword::class, function ($notification) use ($user) {
+             $response = $this->post(route('reset_password.store'), ['token' => $notification->token, 'email' => $user->email, 'password' => 'password', 'password_confirmation' => 'password']);
+             $response->assertSessionHasNoErrors()->assertRedirect(route('login'));
+-            return true;
++            return false;
+         });
+     }
+ }
+
+
+95) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordUpdateTest.php:16    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+ {
+     use RefreshDatabase, WithFaker;
+     #[Test]
+-    public function password_can_be_updated(): void
++    protected function password_can_be_updated(): void
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->from(route('profile.edit'))->put(route('password.update'), ['current_password' => 'password', 'password' => 'new-password', 'password_confirmation' => 'new-password']);
+
+
+96) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordUpdateTest.php:23    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+     public function password_can_be_updated(): void
+     {
+         $user = User::factory()->create();
+-        $response = $this->actingAs($user)->from(route('profile.edit'))->put(route('password.update'), ['current_password' => 'password', 'password' => 'new-password', 'password_confirmation' => 'new-password']);
++        $response = $this->actingAs($user)->from(route('profile.edit'))->put(route('password.update'), ['password' => 'new-password', 'password_confirmation' => 'new-password']);
+         $response->assertSessionHasNoErrors()->assertRedirect(route('profile.edit'));
+         $this->assertTrue(Hash::check('new-password', $user->refresh()->password));
+     }
+
+
+97) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordUpdateTest.php:29    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->from(route('profile.edit'))->put(route('password.update'), ['current_password' => 'password', 'password' => 'new-password', 'password_confirmation' => 'new-password']);
+-        $response->assertSessionHasNoErrors()->assertRedirect(route('profile.edit'));
++        
+         $this->assertTrue(Hash::check('new-password', $user->refresh()->password));
+     }
+     #[Test]
+
+
+98) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordUpdateTest.php:32    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->from(route('profile.edit'))->put(route('password.update'), ['current_password' => 'password', 'password' => 'new-password', 'password_confirmation' => 'new-password']);
+         $response->assertSessionHasNoErrors()->assertRedirect(route('profile.edit'));
+-        $this->assertTrue(Hash::check('new-password', $user->refresh()->password));
++        
+     }
+     #[Test]
+     public function correct_password_must_be_provided_to_update_password(): void
+
+
+99) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordUpdateTest.php:35    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $this->assertTrue(Hash::check('new-password', $user->refresh()->password));
+     }
+     #[Test]
+-    public function correct_password_must_be_provided_to_update_password(): void
++    protected function correct_password_must_be_provided_to_update_password(): void
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->from(route('profile.edit'))->put(route('password.update'), ['current_password' => 'wrong-password', 'password' => 'new-password', 'password_confirmation' => 'new-password']);
+
+
+100) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordUpdateTest.php:42    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+     public function correct_password_must_be_provided_to_update_password(): void
+     {
+         $user = User::factory()->create();
+-        $response = $this->actingAs($user)->from(route('profile.edit'))->put(route('password.update'), ['current_password' => 'wrong-password', 'password' => 'new-password', 'password_confirmation' => 'new-password']);
++        $response = $this->actingAs($user)->from(route('profile.edit'))->put(route('password.update'), ['password' => 'new-password', 'password_confirmation' => 'new-password']);
+         $response->assertSessionHasErrorsIn('updatePassword', 'current_password')->assertRedirect(route('profile.edit'));
+     }
+ }
+
+
+101) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/PasswordUpdateTest.php:48    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->from(route('profile.edit'))->put(route('password.update'), ['current_password' => 'wrong-password', 'password' => 'new-password', 'password_confirmation' => 'new-password']);
+-        $response->assertSessionHasErrorsIn('updatePassword', 'current_password')->assertRedirect(route('profile.edit'));
++        
+     }
+ }
+
+
+102) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php:15    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+ {
+     use RefreshDatabase, WithFaker;
+     #[Test]
+-    public function registration_screen_can_be_rendered(): void
++    protected function registration_screen_can_be_rendered(): void
+     {
+         $response = $this->get(route('register'));
+         $response->assertStatus(200);
+
+
+103) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php:20    [M] DecrementInteger
+
+--- Original
++++ New
+@@ @@
+     public function registration_screen_can_be_rendered(): void
+     {
+         $response = $this->get(route('register'));
+-        $response->assertStatus(200);
++        $response->assertStatus(199);
+     }
+     #[Test]
+     public function new_users_can_register(): void
+
+
+104) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php:20    [M] IncrementInteger
+
+--- Original
++++ New
+@@ @@
+     public function registration_screen_can_be_rendered(): void
+     {
+         $response = $this->get(route('register'));
+-        $response->assertStatus(200);
++        $response->assertStatus(201);
+     }
+     #[Test]
+     public function new_users_can_register(): void
+
+
+105) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php:20    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     public function registration_screen_can_be_rendered(): void
+     {
+         $response = $this->get(route('register'));
+-        $response->assertStatus(200);
++        
+     }
+     #[Test]
+     public function new_users_can_register(): void
+
+
+106) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php:23    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $response->assertStatus(200);
+     }
+     #[Test]
+-    public function new_users_can_register(): void
++    protected function new_users_can_register(): void
+     {
+         $response = $this->post(route('register.store'), ['name' => 'Test User', 'email' => 'test@example.com', 'password' => 'password', 'password_confirmation' => 'password']);
+         $this->assertAuthenticated();
+
+
+107) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php:26    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+     #[Test]
+     public function new_users_can_register(): void
+     {
+-        $response = $this->post(route('register.store'), ['name' => 'Test User', 'email' => 'test@example.com', 'password' => 'password', 'password_confirmation' => 'password']);
++        $response = $this->post(route('register.store'), ['email' => 'test@example.com', 'password' => 'password', 'password_confirmation' => 'password']);
+         $this->assertAuthenticated();
+         $response->assertRedirect(RouteServiceProvider::HOME);
+     }
+ }
+
+
+108) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php:33    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     public function new_users_can_register(): void
+     {
+         $response = $this->post(route('register.store'), ['name' => 'Test User', 'email' => 'test@example.com', 'password' => 'password', 'password_confirmation' => 'password']);
+-        $this->assertAuthenticated();
++        
+         $response->assertRedirect(RouteServiceProvider::HOME);
+     }
+ }
+
+
+109) /home/user/Documentos/Project/laravel-tests/tests/Feature/Auth/RegistrationTest.php:35    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $response = $this->post(route('register.store'), ['name' => 'Test User', 'email' => 'test@example.com', 'password' => 'password', 'password_confirmation' => 'password']);
+         $this->assertAuthenticated();
+-        $response->assertRedirect(RouteServiceProvider::HOME);
++        
+     }
+ }
+
+
+110) /home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php:15    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+ {
+     use RefreshDatabase, WithFaker;
+     #[Test]
+-    public function only_logged_in_users_can_see_dashboard_screen(): void
++    protected function only_logged_in_users_can_see_dashboard_screen(): void
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->get(route('dashboard'));
+
+
+111) /home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php:22    [M] DecrementInteger
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->get(route('dashboard'));
+-        $response->assertStatus(200);
++        $response->assertStatus(199);
+     }
+ }
+
+
+112) /home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php:22    [M] IncrementInteger
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->get(route('dashboard'));
+-        $response->assertStatus(200);
++        $response->assertStatus(201);
+     }
+ }
+
+
+113) /home/user/Documentos/Project/laravel-tests/tests/Feature/DashboardTest.php:22    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->get(route('dashboard'));
+-        $response->assertStatus(200);
++        
+     }
+ }
+
+
+114) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:15    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+ {
+     use RefreshDatabase, WithFaker;
+     #[Test]
+-    public function profile_page_is_displayed(): void
++    protected function profile_page_is_displayed(): void
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->get(route('profile.edit'));
+
+
+115) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:23    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->get(route('profile.edit'));
+-        $response->assertOk();
++        
+     }
+     #[Test]
+     public function profile_information_can_be_updated(): void
+
+
+116) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:26    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $response->assertOk();
+     }
+     #[Test]
+-    public function profile_information_can_be_updated(): void
++    protected function profile_information_can_be_updated(): void
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->patch(route('profile.update'), ['name' => 'Test User', 'email' => 'test@example.com']);
+
+
+117) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:32    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+     public function profile_information_can_be_updated(): void
+     {
+         $user = User::factory()->create();
+-        $response = $this->actingAs($user)->patch(route('profile.update'), ['name' => 'Test User', 'email' => 'test@example.com']);
++        $response = $this->actingAs($user)->patch(route('profile.update'), ['email' => 'test@example.com']);
+         $response->assertSessionHasNoErrors()->assertRedirect(route('profile.edit'));
+         $user->refresh();
+         $this->assertSame('Test User', $user->name);
+
+
+118) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:37    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->patch(route('profile.update'), ['name' => 'Test User', 'email' => 'test@example.com']);
+-        $response->assertSessionHasNoErrors()->assertRedirect(route('profile.edit'));
++        
+         $user->refresh();
+         $this->assertSame('Test User', $user->name);
+         $this->assertSame('test@example.com', $user->email);
+
+
+119) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:40    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->patch(route('profile.update'), ['name' => 'Test User', 'email' => 'test@example.com']);
+         $response->assertSessionHasNoErrors()->assertRedirect(route('profile.edit'));
+-        $user->refresh();
++        
+         $this->assertSame('Test User', $user->name);
+         $this->assertSame('test@example.com', $user->email);
+         $this->assertNull($user->email_verified_at);
+
+
+120) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:42    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $response = $this->actingAs($user)->patch(route('profile.update'), ['name' => 'Test User', 'email' => 'test@example.com']);
+         $response->assertSessionHasNoErrors()->assertRedirect(route('profile.edit'));
+         $user->refresh();
+-        $this->assertSame('Test User', $user->name);
++        
+         $this->assertSame('test@example.com', $user->email);
+         $this->assertNull($user->email_verified_at);
+     }
+
+
+121) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:43    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $response->assertSessionHasNoErrors()->assertRedirect(route('profile.edit'));
+         $user->refresh();
+         $this->assertSame('Test User', $user->name);
+-        $this->assertSame('test@example.com', $user->email);
++        
+         $this->assertNull($user->email_verified_at);
+     }
+     #[Test]
+
+
+122) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:44    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $user->refresh();
+         $this->assertSame('Test User', $user->name);
+         $this->assertSame('test@example.com', $user->email);
+-        $this->assertNull($user->email_verified_at);
++        
+     }
+     #[Test]
+     public function email_verification_status_is_unchanged_when_the_email_address_is_unchanged(): void
+
+
+123) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:47    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $this->assertNull($user->email_verified_at);
+     }
+     #[Test]
+-    public function email_verification_status_is_unchanged_when_the_email_address_is_unchanged(): void
++    protected function email_verification_status_is_unchanged_when_the_email_address_is_unchanged(): void
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->patch(route('profile.update'), ['name' => 'Test User', 'email' => $user->email]);
+
+
+124) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:53    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+     public function email_verification_status_is_unchanged_when_the_email_address_is_unchanged(): void
+     {
+         $user = User::factory()->create();
+-        $response = $this->actingAs($user)->patch(route('profile.update'), ['name' => 'Test User', 'email' => $user->email]);
++        $response = $this->actingAs($user)->patch(route('profile.update'), ['email' => $user->email]);
+         $response->assertSessionHasNoErrors()->assertRedirect(route('profile.edit'));
+         $this->assertNotNull($user->refresh()->email_verified_at);
+     }
+
+
+125) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:55    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     public function email_verification_status_is_unchanged_when_the_email_address_is_unchanged(): void
+     {
+         $user = User::factory()->create();
+-        $response = $this->actingAs($user)->patch(route('profile.update'), ['name' => 'Test User', 'email' => $user->email]);
++        $response = $this->actingAs($user)->patch(route('profile.update'), ['name' => 'Test User', 'email' > $user->email]);
+         $response->assertSessionHasNoErrors()->assertRedirect(route('profile.edit'));
+         $this->assertNotNull($user->refresh()->email_verified_at);
+     }
+
+
+126) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:58    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->patch(route('profile.update'), ['name' => 'Test User', 'email' => $user->email]);
+-        $response->assertSessionHasNoErrors()->assertRedirect(route('profile.edit'));
++        
+         $this->assertNotNull($user->refresh()->email_verified_at);
+     }
+     #[Test]
+
+
+127) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:61    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->patch(route('profile.update'), ['name' => 'Test User', 'email' => $user->email]);
+         $response->assertSessionHasNoErrors()->assertRedirect(route('profile.edit'));
+-        $this->assertNotNull($user->refresh()->email_verified_at);
++        
+     }
+     #[Test]
+     public function user_can_delete_their_account(): void
+
+
+128) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:64    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $this->assertNotNull($user->refresh()->email_verified_at);
+     }
+     #[Test]
+-    public function user_can_delete_their_account(): void
++    protected function user_can_delete_their_account(): void
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->delete(route('profile.destroy'), ['password' => 'password']);
+
+
+129) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:70    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+     public function user_can_delete_their_account(): void
+     {
+         $user = User::factory()->create();
+-        $response = $this->actingAs($user)->delete(route('profile.destroy'), ['password' => 'password']);
++        $response = $this->actingAs($user)->delete(route('profile.destroy'), []);
+         $response->assertSessionHasNoErrors()->assertRedirect(route('welcome'));
+         $this->assertGuest();
+         $this->assertNull($user->fresh());
+
+
+130) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:74    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->delete(route('profile.destroy'), ['password' => 'password']);
+-        $response->assertSessionHasNoErrors()->assertRedirect(route('welcome'));
++        
+         $this->assertGuest();
+         $this->assertNull($user->fresh());
+     }
+
+
+131) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:77    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->delete(route('profile.destroy'), ['password' => 'password']);
+         $response->assertSessionHasNoErrors()->assertRedirect(route('welcome'));
+-        $this->assertGuest();
++        
+         $this->assertNull($user->fresh());
+     }
+     #[Test]
+
+
+132) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:78    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $response = $this->actingAs($user)->delete(route('profile.destroy'), ['password' => 'password']);
+         $response->assertSessionHasNoErrors()->assertRedirect(route('welcome'));
+         $this->assertGuest();
+-        $this->assertNull($user->fresh());
++        
+     }
+     #[Test]
+     public function correct_password_must_be_provided_to_delete_account(): void
+
+
+133) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:81    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $this->assertNull($user->fresh());
+     }
+     #[Test]
+-    public function correct_password_must_be_provided_to_delete_account(): void
++    protected function correct_password_must_be_provided_to_delete_account(): void
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->from(route('profile.edit'))->delete(route('profile.destroy'), ['password' => 'wrong-password']);
+
+
+134) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:88    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+     public function correct_password_must_be_provided_to_delete_account(): void
+     {
+         $user = User::factory()->create();
+-        $response = $this->actingAs($user)->from(route('profile.edit'))->delete(route('profile.destroy'), ['password' => 'wrong-password']);
++        $response = $this->actingAs($user)->from(route('profile.edit'))->delete(route('profile.destroy'), []);
+         $response->assertSessionHasErrorsIn('userDeletion', 'password')->assertRedirect(route('profile.edit'));
+         $this->assertNotNull($user->fresh());
+     }
+ }
+
+
+135) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:92    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->from(route('profile.edit'))->delete(route('profile.destroy'), ['password' => 'wrong-password']);
+-        $response->assertSessionHasErrorsIn('userDeletion', 'password')->assertRedirect(route('profile.edit'));
++        
+         $this->assertNotNull($user->fresh());
+     }
+ }
+
+
+136) /home/user/Documentos/Project/laravel-tests/tests/Feature/ProfileTest.php:95    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $user = User::factory()->create();
+         $response = $this->actingAs($user)->from(route('profile.edit'))->delete(route('profile.destroy'), ['password' => 'wrong-password']);
+         $response->assertSessionHasErrorsIn('userDeletion', 'password')->assertRedirect(route('profile.edit'));
+-        $this->assertNotNull($user->fresh());
++        
+     }
+ }
+
+
+137) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:11    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+ class UserTest extends TestCase
+ {
+     #[Test]
+-    public function check_if_user_columns_are_correct(): void
++    protected function check_if_user_columns_are_correct(): void
+     {
+         $user = new User();
+         // Colunas esperadas
+
+
+138) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:17    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = new User();
+         // Colunas esperadas
+-        $columns_expected = ['name', 'email', 'password'];
++        $columns_expected = ['email', 'password'];
+         // Verifica se as colunas esperadas não estão vazias
+         $this->assertNotEmpty($columns_expected, 'O array de colunas esperadas não deve estar vazio.');
+         // Colunas que o modelo User realmente aceita
+
+
+139) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:25    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $user = new User();
+         // Colunas esperadas
+         $columns_expected = ['name', 'email', 'password'];
+-        // Verifica se as colunas esperadas não estão vazias
+-        $this->assertNotEmpty($columns_expected, 'O array de colunas esperadas não deve estar vazio.');
++        
+         // Colunas que o modelo User realmente aceita
+         $fillable_columns = $user->getFillable();
+         // Verifica se todas as colunas esperadas estão presentes
+
+
+140) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:31    [M] Foreach_
+
+--- Original
++++ New
+@@ @@
+         // Colunas que o modelo User realmente aceita
+         $fillable_columns = $user->getFillable();
+         // Verifica se todas as colunas esperadas estão presentes
+-        foreach ($columns_expected as $column) {
++        foreach ([] as $column) {
+             $this->assertContains($column, $fillable_columns, "A coluna {$column} não está presente.");
+         }
+         // Verifica se não há colunas extras
+
+
+141) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:32    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $fillable_columns = $user->getFillable();
+         // Verifica se todas as colunas esperadas estão presentes
+         foreach ($columns_expected as $column) {
+-            $this->assertContains($column, $fillable_columns, "A coluna {$column} não está presente.");
++            
+         }
+         // Verifica se não há colunas extras
+         $extra_columns = array_diff($fillable_columns, $columns_expected);
+
+
+142) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:36    [M] UnwrapArrayDiff
+
+--- Original
++++ New
+@@ @@
+             $this->assertContains($column, $fillable_columns, "A coluna {$column} não está presente.");
+         }
+         // Verifica se não há colunas extras
+-        $extra_columns = array_diff($fillable_columns, $columns_expected);
++        $extra_columns = $fillable_columns;
+         $this->assertCount(0, $extra_columns, 'Existem colunas extras no modelo.');
+     }
+     #[Test]
+
+
+143) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:37    [M] DecrementInteger
+
+--- Original
++++ New
+@@ @@
+         }
+         // Verifica se não há colunas extras
+         $extra_columns = array_diff($fillable_columns, $columns_expected);
+-        $this->assertCount(0, $extra_columns, 'Existem colunas extras no modelo.');
++        $this->assertCount(-1, $extra_columns, 'Existem colunas extras no modelo.');
+     }
+     #[Test]
+     public function check_if_user_columns_are_not_empty(): void
+
+
+144) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:37    [M] IncrementInteger
+
+--- Original
++++ New
+@@ @@
+         }
+         // Verifica se não há colunas extras
+         $extra_columns = array_diff($fillable_columns, $columns_expected);
+-        $this->assertCount(0, $extra_columns, 'Existem colunas extras no modelo.');
++        $this->assertCount(1, $extra_columns, 'Existem colunas extras no modelo.');
+     }
+     #[Test]
+     public function check_if_user_columns_are_not_empty(): void
+
+
+145) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:37    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         }
+         // Verifica se não há colunas extras
+         $extra_columns = array_diff($fillable_columns, $columns_expected);
+-        $this->assertCount(0, $extra_columns, 'Existem colunas extras no modelo.');
++        
+     }
+     #[Test]
+     public function check_if_user_columns_are_not_empty(): void
+
+
+146) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:40    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $this->assertCount(0, $extra_columns, 'Existem colunas extras no modelo.');
+     }
+     #[Test]
+-    public function check_if_user_columns_are_not_empty(): void
++    protected function check_if_user_columns_are_not_empty(): void
+     {
+         $user = new User();
+         $fillable_columns = $user->getFillable();
+
+
+147) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:48    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = new User();
+         $fillable_columns = $user->getFillable();
+-        // Verifica se as colunas permitidas não estão vazias
+-        $this->assertNotEmpty($fillable_columns, 'As colunas permitidas não devem estar vazias.');
++        
+     }
+     #[Test]
+     public function check_if_user_columns_include_email_and_password(): void
+
+
+148) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:51    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $this->assertNotEmpty($fillable_columns, 'As colunas permitidas não devem estar vazias.');
+     }
+     #[Test]
+-    public function check_if_user_columns_include_email_and_password(): void
++    protected function check_if_user_columns_include_email_and_password(): void
+     {
+         $user = new User();
+         $fillable_columns = $user->getFillable();
+
+
+149) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:59    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $user = new User();
+         $fillable_columns = $user->getFillable();
+-        // Verifica se as colunas incluem 'email' e 'password'
+-        $this->assertContains('email', $fillable_columns, "A coluna 'email' não está presente.");
++        
+         $this->assertContains('password', $fillable_columns, "A coluna 'password' não está presente.");
+     }
+ }
+
+
+150) /home/user/Documentos/Project/laravel-tests/tests/Unit/UserTest.php:60    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $fillable_columns = $user->getFillable();
+         // Verifica se as colunas incluem 'email' e 'password'
+         $this->assertContains('email', $fillable_columns, "A coluna 'email' não está presente.");
+-        $this->assertContains('password', $fillable_columns, "A coluna 'password' não está presente.");
++        
+     }
+ }
